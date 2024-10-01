@@ -5,12 +5,15 @@ export default defineConfig({
   title: "LaraJS Docs",
   description: "LaraJS Documents",
   themeConfig: {
+    search: {
+      provider: "local",
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {text: "Home", link: "/"},
       {text: "Examples", link: "/markdown-examples"},
       {text: "API", link: "/api-examples"},
-      {text: "Getting Started", link: "/getting-started/introduction"},
+      {text: "Getting Started", link: "/introductions/introduction"},
       {
         text: "Demo",
         link: "https://youtu.be/fJ3Inyi034k",
@@ -19,24 +22,24 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Getting Started",
+        text: "Introduction",
         collapsed: false,
         items: [
           {
-            text: "Introduction",
-            link: "/getting-started/introduction",
+            text: "What is LaraJS",
+            link: "/introductions/introduction",
           },
           {
             text: "Installation",
-            link: "/getting-started/installation",
+            link: "/introductions/installation",
           },
           {
             text: "Project Structure",
-            link: "/getting-started/structure",
+            link: "/introductions/structure",
           },
           {
             text: "Support & Bug Reports",
-            link: "/getting-started/support",
+            link: "/introductions/support",
           },
         ],
       },
@@ -45,20 +48,20 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
-            text: "Introduction",
-            link: "/getting-started/introduction",
+            text: "Getting Started",
+            link: "/generators/getting-started",
           },
           {
             text: "Installation",
-            link: "/getting-started/installation",
+            link: "/introductions/installation",
           },
           {
             text: "Project Structure",
-            link: "/getting-started/structure",
+            link: "/introductions/structure",
           },
           {
             text: "Support & Bug Reports",
-            link: "/getting-started/support",
+            link: "/introductions/support",
           },
         ],
       },
