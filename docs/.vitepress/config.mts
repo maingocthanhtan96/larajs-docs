@@ -22,7 +22,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Introduction",
+        text: "Getting Started",
         collapsed: false,
         items: [
           {
@@ -52,16 +52,12 @@ export default defineConfig({
             link: "/generators/getting-started",
           },
           {
-            text: "Installation",
-            link: "/introductions/installation",
+            text: "Backend",
+            link: "/generators/backend",
           },
           {
-            text: "Project Structure",
-            link: "/introductions/structure",
-          },
-          {
-            text: "Support & Bug Reports",
-            link: "/introductions/support",
+            text: "Frontend",
+            link: "/generators/frontend",
           },
         ],
       },

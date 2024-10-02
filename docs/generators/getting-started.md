@@ -1,15 +1,15 @@
 The **Generator** allows users to define and configure models along with their fields for a Laravel application. Users can customize the model name, fields, relationships, and other attributes that will be used to generate the backend API, database, and frontend CMS.
 
-## Model Configuration
+![Generator](../assets/generators/generator.png)
 
-### Model Name
+## Model
 
-| **Field**            | **Description**               | **Default** | **Example**     | **Validation** |
-| -------------------- | ----------------------------- | ----------- | --------------- | -------------- |
-| `Model Name`         | Defines the name of the model |             | `Category`      | Required       |
-| `Model Name Display` | Display name in menu bar      |             | `Category Menu` | Required       |
+| **Field**            | **Description**               | **Default** | **Example**        | **Validation** |
+| -------------------- | ----------------------------- | ----------- | ------------------ | -------------- |
+| `Model Name`         | Defines the name of the model |             | `Category`         | Required       |
+| `Model Name Display` | Display name in menu bar      |             | `Category Sidebar` | Required       |
 
-### Options
+## Options
 
 | **Field**        | **Description**                                                                  | **Default** | **Example** | **Validation** |
 | ---------------- | -------------------------------------------------------------------------------- | ----------- | ----------- | -------------- |
@@ -20,7 +20,7 @@ The **Generator** allows users to define and configure models along with their f
 | `Only Migrate`   | Only generate migration and Model.                                               | UnChecked   |             | Optional       |
 | `Test Cases`     | Generates test cases for the model and related services.                         | Checked     |             | Optional       |
 
-### Fields Configuration Table
+## Fields Configuration Table
 
 | **Field**            | **Description**                                                                    | **Default**    | **Example**    | **Validation** |
 | -------------------- | ---------------------------------------------------------------------------------- | -------------- | -------------- | -------------- |
@@ -32,15 +32,19 @@ The **Generator** allows users to define and configure models along with their f
 | `Search/Sort/Show`   | Enable or disable search, sort, and show position in the CMS.                      |                |                | Optional       |
 | `Delete`             | Option to delete the field from the configuration.                                 |                |                |                |
 
-**Field Option**
+### Field Option
 
 | **Option** | **Description**                                                                                   | **Example**                                         |
 | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Unique     | Ensures the field value is unique across all records in the database.                             | Enabled for `email` field to ensure unique emails.  |
-| Index      | Creates an index on the field to optimize database query performance.                             | Enabled for `status` field to improve search speed. |
-| Comment    | Adds a comment for the field in the database, useful for documentation or clarification purposes. | Indicates if the category is active or inactive.    |
+| `Unique`   | Ensures the field value is unique across all records in the database.                             | Enabled for `email` field to ensure unique emails.  |
+| `Index`    | Creates an index on the field to optimize database query performance.                             | Enabled for `status` field to improve search speed. |
+| `Comment`  | Adds a comment for the field in the database, useful for documentation or clarification purposes. | Indicates if the category is active or inactive.    |
 
-**Database Type**
+![Generator Option](../assets/generators/generator-option.png)
+
+### Database Type
+
+**Database**
 
 | **Database Type**       | **Display Name**   | **Search** | **Sort** | **Show** |
 | ----------------------- | ------------------ | :--------: | :------: | :------: |
@@ -76,3 +80,21 @@ The **Generator** allows users to define and configure models along with their f
 | **Relationship Types**  |                    |            |          |          |
 | `hasOne`                | hasOne             |     ✅     |    ✅    |    ✅    |
 | `hasMany`               | hasMany            |     ✅     |    ✅    |    ✅    |
+
+**Form**
+
+Each **Database Type** will feature a distinct UI, with our focus centered on utilizing the **Element Plus** components.
+
+| **Database Type**                                                                                                                                                                           | **UI**                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `INTEGER`, `UNSIGNED INTEGER`, `TINYINT`, `UNSIGNED TINYINT`, `SMALLINT`, `UNSIGNED SMALLINT`, `MEDIUMINT`, `UNSIGNED MEDIUMINT`, `BIGINT`, `UNSIGNED BIGINT`, `FLOAT`, `DOUBLE`, `DECIMAL` | ![integer](../assets/generators/ui/integer.png)   |
+| `BOOLEAN`                                                                                                                                                                                   | ![boolean](../assets/generators/ui/boolean.png)   |
+| `DATE`                                                                                                                                                                                      | ![date](../assets/generators/ui/date.png)         |
+| `DATETIME`, `TIMESTAMP`                                                                                                                                                                     | ![integer](../assets/generators/ui/datetime.png)  |
+| `TIME`                                                                                                                                                                                      | ![time](../assets/generators/ui/time.png)         |
+| `YEAR`                                                                                                                                                                                      | ![year](../assets/generators/ui/year.png)         |
+| `CHAR`, `VARCHAR`                                                                                                                                                                           | ![varchar](../assets/generators/ui/varchar.png)   |
+| `TINYTEXT`, `MEDIUMTEXT`, `TEXT`                                                                                                                                                            | ![text](../assets/generators/ui/text.png)         |
+| `LONGTEXT`                                                                                                                                                                                  | ![longtext](../assets/generators/ui/longtext.png) |
+| `ENUM`                                                                                                                                                                                      | ![enum](../assets/generators/ui/enum.png)         |
+| `JSON`, `JSONB`                                                                                                                                                                             | ![json](../assets/generators/ui/json.png)         |

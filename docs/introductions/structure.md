@@ -21,12 +21,12 @@
 │   ├── plugins
 │   ├── ssr
 │   ├── uses
-│   ├── utils
+│   └── utils
 ├── .commitlintrc.json
 ├── .prettierrc.json
 ├── compose.yml
 ├── eslint.config.js
-├── lerna.json
+├── turbo.json
 ├── package.json
 └── ...
 ```
