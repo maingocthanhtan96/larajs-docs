@@ -1,6 +1,6 @@
 # Structure (Monorepo)
 
-```tree
+```txt
 .
 ├── .docker
 ├── .husky

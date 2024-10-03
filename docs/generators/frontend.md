@@ -1,3 +1,36 @@
+We generate the CMS according to the following structure
+
+```txt
+.
+├── apps
+│   ├── api
+│   ├── cms
+│   │   └── src
+│   │       ├── api
+│   │       │   └── category.ts
+│   │       ├── router
+│   │       │   ├── index.ts
+│   │       │   └── modules
+│   │       │       └── category.ts
+│   │       ├── uses
+│   │       │   └── category
+│   │       │       ├── form.tsx
+│   │       │       └── table.tsx
+│   │       └── views
+│   │           └── category
+│   │               ├── Form.vue
+│   │               └── index.vue
+│   └── frontend
+├── packages
+│   ├── ...
+│   └── common
+│       ├── src
+│       │   └── vue-i18n-locales.generated.json
+│       └── models
+│           └── category.ts
+└── ...
+```
+
 ## API
 
 ```ts
@@ -218,6 +251,10 @@ onBeforeMount(async () => {
 </template>
 ```
 
+<center>
+  <img src="../assets/generators/form.png" alt="larajs-form" />
+</center>
+
 **index.vue**
 
 ```vue
@@ -254,6 +291,10 @@ const {table} = useCategoryTables();
   </el-card>
 </template>
 ```
+
+<center>
+  <img src="../assets/generators/table.png" alt="larajs-table" />
+</center>
 
 ## Model
 

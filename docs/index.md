@@ -14,7 +14,7 @@ hero:
       text: Getting Started
       link: /introductions/introduction
     - theme: alt
-      text: Demo
+      text: Video Demo
       link: https://youtu.be/fJ3Inyi034k
 
 features:

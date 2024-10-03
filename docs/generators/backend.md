@@ -1,3 +1,61 @@
+
+We generate the API according to the following structure
+
+```txt
+
+.
+├── apps
+│   ├── api
+│   │   ├── app
+│   │   │   ├── Http
+│   │   │   │   ├── Controllers
+│   │   │   │   │   ├── Api
+│   │   │   │   │   │   └── V1
+│   │   │   │   │   │       └── CategoryController.php
+│   │   │   │   ├── Requests
+│   │   │   │   │   └── V1
+│   │   │   │   │       └── StoreCategoryRequest.php
+│   │   │   │   └── Resources
+│   │   │   │       └── V1
+│   │   │   │           └── CategoryResource.php
+│   │   │   ├── Models
+│   │   │   │   └── Category.php
+│   │   │   ├── Repositories
+│   │   │   │   └── Category
+│   │   │   │       ├── CategoryRepository.php
+│   │   │   │       └── CategoryRepositoryInterface.php
+│   │   │   └── Services
+│   │   │       └── V1
+│   │   │           └── Category
+│   │   │               └── CategoryService.php
+│   │   ├── database
+│   │   │   ├── factories
+│   │   │   │   └── CategoryFactory.php
+│   │   │   ├── migrations
+│   │   │   │   └── 2024_10_03_023029_create_categories_table.php
+│   │   │   └── seeders
+│   │   │       └── CategorySeeder.php
+│   │   ├── lang
+│   │   │   ├── en
+│   │   │   │   ├── route.php
+│   │   │   │   └── table.php
+│   │   │   ├── ja
+│   │   │   │   ├── route.php
+│   │   │   │   └── table.php
+│   │   │   └── vi
+│   │   │      ├── route.php
+│   │   │      └── table.php
+│   │   ├── routes
+│   │   │   └── api-v1.php
+│   │   └── tests
+│   │       └── Feature
+│   │           └── CategoryTest.php
+│   ├── cms
+│   └── frontend
+├── packages
+└── ...
+```
+
 ## Form Request
 
 ```php
@@ -258,27 +316,59 @@ class CategorySeeder extends Seeder
 
 ## Language
 
-By default, we generate language configurations for en (English), ja (Japanese), and vi (Vietnamese). These language files enable localized routes and table labels, ensuring that users from different regions can interact with the system in their preferred language.
+**route.php**
 
 ```php
-// Publish generator.php
-php artisan vendor:publish --tag=larajs-core-config
+<?php
+return [
+    ...
+    // START - category
+    'category' => 'Category Sidebar',
+    'category_overview' => 'List Category Sidebar',
+    'category_create' => 'Create Category Sidebar',
+    'category_edit' => 'Edit Category Sidebar',
+];
+```
 
-'lang' => [
-    'en' => [
-        'route' => '',
-        'table' => '',
+**table.php**
+
+```php
+<?php
+return [
+    ...
+    // START - category
+    'category' => [
+        'id' => 'ID',
+        ...
+    ]
+];
+```
+
+By default, we generate language configurations for en (English), ja (Japanese), and vi (Vietnamese). If you need to add more languages, you can extend the configuration by following these steps:
+
+1. Publish the `generator.php` configuration file by running the command:
+```php
+php artisan vendor:publish --tag=larajs-core-config
+```
+2. After publishing, you can add new language entries in the lang array within the configuration file:
+```php
+return [
+    'lang' => [
+        'en' => [
+            'route' => '',  // Define localized route names for English
+            'table' => '',  // Define table labels for English
+        ],
+        'ja' => [
+            'route' => '',  // Define localized route names for Japanese
+            'table' => '',  // Define table labels for Japanese
+        ],
+        'vi' => [
+            'route' => '',  // Define localized route names for Vietnamese
+            'table' => '',  // Define table labels for Vietnamese
+        ],
+        // Add additional languages here
     ],
-    'ja' => [
-        'route' => '',
-        'table' => '',
-    ],
-    'vi' => [
-        'route' => '',
-        'table' => '',
-    ],
-    // Add more language in here
-],
+]
 ```
 
 **Generate Vue I18n**
@@ -291,7 +381,7 @@ php artisan vue-i18n:generate
 
 **Structure**
 
-```tree
+```txt
 .
 ├── en
 │   ├── route.php
@@ -313,7 +403,6 @@ php artisan vue-i18n:generate
 
 ```php
 <?php
-
 Route::group(['middleware' => 'auth:sanctum'], function () {
     ...
     Route::apiResource('categories', CategoryController::class);
@@ -365,4 +454,24 @@ test('destroy a category -> 200', function () {
     // Call Api
     // Expect
 });
+```
+
+**Run tests**
+
+We leverage [Pest PHP](https://pestphp.com/) to generate tests.
+
+```php
+php artisan test
+```
+Output
+
+```bash
+...
+PASS  Tests\Feature\CategoryTest
+✓ get list categories -> 200                                 0.04s  
+✓ show a category -> 200                                     0.02s  
+✓ store a category -> 201                                    0.02s  
+✓ update a category -> 200                                   0.02s  
+✓ destroy a category -> 200                                  0.02s 
+...
 ```
