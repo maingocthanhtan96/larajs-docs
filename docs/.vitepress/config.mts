@@ -72,10 +72,22 @@ export default defineConfig({
             text: "LaraJS I18n",
             link: "/packages/larajs-i18n",
           },
+          {
+            text: "LaraJS Core",
+            link: "/packages/larajs-core",
+          },
+          {
+            text: "LaraJS Generator",
+            link: "/packages/larajs-generator",
+          },
           // {
           //   text: "LaraJS CQRS",
           //   link: "/packages/larajs-cqrs",
           // },
+          {
+            text: "LaraJS Boilerplate",
+            link: "/packages/larajs-boilerplate",
+          },
         ],
       },
       {

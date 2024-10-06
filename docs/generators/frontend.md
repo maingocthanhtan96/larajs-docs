@@ -1,3 +1,5 @@
+# 🛠️ CMS Structure (Monorepo)
+
 We generate the CMS according to the following structure
 
 ```txt
@@ -31,7 +33,7 @@ We generate the CMS according to the following structure
 └── ...
 ```
 
-## API
+## 🌐 API Integration
 
 ```ts
 class CategoryResource extends Resource<Category> {
@@ -67,11 +69,11 @@ export function useCategoryApis() {
 }
 ```
 
-## Router
+## 🚦 Router Setup
 
 There are two types of routes here , `constantRoutes` and `asyncRoutes`.
 
-**constantRouterMap**
+**1. constantRouterMap**
 
 Represents routes that do not require dynamic access control and do not require authentication.
 
@@ -81,9 +83,9 @@ export const constantRouterMap: RouterMapping[] = [
 ];
 ```
 
-**asyncRoutes**
+**2. asyncRouterMap**
 
-Represents pages that require authentication and are loaded based on permissions.
+Represents pages that require authentication and are dynamically loaded based on the permissions of the current user.
 
 ```ts
 export const asyncRouterMap = [
@@ -97,7 +99,7 @@ export const asyncRouterMap = [
 ];
 ```
 
-**category.ts**
+**Category Route Definition (category.ts)**
 
 ```ts
 const category: RouterMapping = {
@@ -124,9 +126,9 @@ const category: RouterMapping = {
 export default category;
 ```
 
-## Uses
+## 🛠️ Uses (Hooks)
 
-**form.tsx**
+**Category Forms (form.tsx)**
 
 ```tsx
 export function useCategoryForms() {
@@ -168,7 +170,7 @@ export function categoryRules(): FormRules {
 }
 ```
 
-**table.tsx**
+**Category Table (table.tsx)**
 
 ```tsx
 export function useCategoryTables() {
@@ -217,7 +219,7 @@ export function useCategoryTables() {
 }
 ```
 
-## Views
+## 📋 Views
 
 **Form.vue**
 
@@ -296,7 +298,7 @@ const {table} = useCategoryTables();
   <img src="../assets/generators/table.png" alt="larajs-table" />
 </center>
 
-## Model
+## 🗃️ Model Interface
 
 ```ts
 export interface Category {

@@ -1,3 +1,4 @@
+# 🛠️ API Structure (Monorepo)
 
 We generate the API according to the following structure
 
@@ -56,7 +57,9 @@ We generate the API according to the following structure
 └── ...
 ```
 
-## Form Request
+## 📝 Form Request
+
+The form request is used to validate the data before performing any actions in the controller.
 
 ```php
 <?php
@@ -79,7 +82,9 @@ class StoreCategoryRequest extends FormRequest
 }
 ```
 
-## Controller
+## 🗂️ Controller
+
+The controller handles API requests for category management.
 
 ```php
 <?php
@@ -122,7 +127,9 @@ class CategoryController extends Controller implements HasMiddleware
 }
 ```
 
-## Service
+## 💼 Service
+
+The service layer handles the business logic for categories.
 
 ```php
 <?php
@@ -163,7 +170,7 @@ readonly class CategoryService
 }
 ```
 
-## Repository
+## 📦 Repository
 
 **CategoryRepository.php**
 
@@ -203,7 +210,7 @@ namespace App\Repositories\Category;
 interface CategoryRepositoryInterface extends BaseRepositoryInterface {}
 ```
 
-## Api Document
+## 📑 API Documentation
 
 We leverage [Laravel Scribe](https://scribe.knuckles.wtf/laravel/) to automatically generate API documentation.
 
@@ -217,7 +224,9 @@ php artisan scribe:generate
     <img src="../assets/generators/api-docs.png" alt="Api Document" />
 </center>
 
-## Eloquent Resource
+## 📋 Eloquent Resource
+
+Resources transform your model data into JSON for API responses.
 
 ```php
 <?php
@@ -233,7 +242,7 @@ class CategoryResource extends JsonResource
 }
 ```
 
-## Model
+## 🗃️ Model
 
 ```php
 <?php
@@ -253,7 +262,7 @@ class Category extends Model
 }
 ```
 
-## Database
+## 🛠️ Database
 
 ### Factory
 
@@ -314,7 +323,7 @@ class CategorySeeder extends Seeder
 }
 ```
 
-## Language
+## 🌐 Language
 
 **route.php**
 
@@ -344,13 +353,18 @@ return [
 ];
 ```
 
+## 🌐 Language
+
 By default, we generate language configurations for en (English), ja (Japanese), and vi (Vietnamese). If you need to add more languages, you can extend the configuration by following these steps:
 
 1. Publish the `generator.php` configuration file by running the command:
+
 ```php
 php artisan vendor:publish --tag=larajs-core-config
 ```
+
 2. After publishing, you can add new language entries in the lang array within the configuration file:
+
 ```php
 return [
     'lang' => [
@@ -397,7 +411,9 @@ php artisan larajs:i18n
     └── ...
 ```
 
-## Route
+## 🧩 Route
+
+The API routes for version 1 are defined in the following file:
 
 **api-v1.php**
 
@@ -410,7 +426,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
 ```
 
-## Tests
+## 🧪 Tests
 
 When the `Test Cases` option is checked, we automatically generate integration tests to ensure the API functions correctly.
 
@@ -456,22 +472,23 @@ test('destroy a category -> 200', function () {
 });
 ```
 
-**Run tests**
+**🚀 Running Tests**
 
 We leverage [Pest PHP](https://pestphp.com/) to generate tests.
 
 ```php
 php artisan test
 ```
+
 Output
 
 ```bash
 ...
 PASS  Tests\Feature\CategoryTest
-✓ get list categories -> 200                                 0.04s  
-✓ show a category -> 200                                     0.02s  
-✓ store a category -> 201                                    0.02s  
-✓ update a category -> 200                                   0.02s  
-✓ destroy a category -> 200                                  0.02s 
+✓ get list categories -> 200                                 0.04s
+✓ show a category -> 200                                     0.02s
+✓ store a category -> 201                                    0.02s
+✓ update a category -> 200                                   0.02s
+✓ destroy a category -> 200                                  0.02s
 ...
 ```

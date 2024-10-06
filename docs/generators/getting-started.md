@@ -1,15 +1,21 @@
+---
+outline: deep
+---
+
+# 🛠️ Generator Overview
+
 The **Generator** allows users to define and configure models along with their fields for a Laravel application. Users can customize the model name, fields, relationships, and other attributes that will be used to generate the backend API, database, and frontend CMS.
 
 ![Generator](../assets/generators/generator.png)
 
-## Model
+## 📄 Model Configuration
 
 | **Field**            | **Description**               | **Default** | **Example**        | **Validation** |
 | -------------------- | ----------------------------- | ----------- | ------------------ | -------------- |
 | `Model Name`         | Defines the name of the model |             | `Category`         | Required       |
 | `Model Name Display` | Display name in menu bar      |             | `Category Sidebar` | Required       |
 
-## Options
+## ⚙️ Options
 
 | **Field**        | **Description**                                                                  | **Default** | **Example** | **Validation** |
 | ---------------- | -------------------------------------------------------------------------------- | ----------- | ----------- | -------------- |
@@ -20,7 +26,7 @@ The **Generator** allows users to define and configure models along with their f
 | `Only Migrate`   | Only generate migration and Model.                                               | UnChecked   |             | Optional       |
 | `Test Cases`     | Generates test cases for the model and related services.                         | Checked     |             | Optional       |
 
-## Fields Configuration Table
+## 🏗️ Fields Configuration
 
 | **Field**                 | **Description**                                                                                                    | **Default**    | **Example**    | **Validation** |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------- | -------------- | -------------- |
@@ -32,7 +38,7 @@ The **Generator** allows users to define and configure models along with their f
 | `Search/Sort/Show/Layout` | On/Off `search`, `sort`, and `show` in the table. The column `layout` can be adjusted to a value between 1 and 24. |                |                | Optional       |
 | `Delete`                  | Option to delete the field from the configuration.                                                                 |                |                |                |
 
-### Field Option
+### 🔧 Field Option
 
 | **Option** | **Description**                                                                                   | **Example**                                         |
 | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
@@ -42,9 +48,9 @@ The **Generator** allows users to define and configure models along with their f
 
 ![Generator Option](../assets/generators/generator-option.png)
 
-### Database Type
+### 📦 Database Type
 
-**Database**
+#### 🗄️ Database
 
 | **Database Type**       | **Display Name**   | **Search** | **Sort** | **Show** |
 | ----------------------- | ------------------ | :--------: | :------: | :------: |
@@ -81,7 +87,7 @@ The **Generator** allows users to define and configure models along with their f
 | `hasOne`                | hasOne             |     ✅     |    ✅    |    ✅    |
 | `hasMany`               | hasMany            |     ✅     |    ✅    |    ✅    |
 
-**Form**
+#### 📝 Form
 
 Each **Database Type** will feature a distinct UI, with our focus centered on utilizing the **Element Plus** components.
 
@@ -98,3 +104,55 @@ Each **Database Type** will feature a distinct UI, with our focus centered on ut
 | `LONGTEXT`                                                                                                                                                                                  | ![longtext](../assets/generators/ui/longtext.png) |
 | `ENUM`                                                                                                                                                                                      | ![enum](../assets/generators/ui/enum.png)         |
 | `JSON`, `JSONB`                                                                                                                                                                             | ![json](../assets/generators/ui/json.png)         |
+
+## 🔗 Relationships
+
+There are two ways to create relationships in our system:
+
+Example:
+
+`Post` → belongs to → `Category`
+
+`Category` → has many → `Post`
+
+### 📝 Generate Form
+
+This way just only for `hasMany` or `belongsTo`
+
+![Relationships Form](../assets/generators/relationship-1.png)
+
+### 📝 Relationship Form
+
+This way for all relationship such as: `hasOne`, `hasMany`, `belongsToMany`
+
+![Relationships Form](../assets/generators/relationship-2.png)
+
+![Relationships Form](../assets/generators/relationship-2-form.png)
+
+**🔄 Many To Many**
+
+Many to many will generate pivot table. By default, the pivot table is `CategoryPost` (`{Model1}` + `{Model2}`).
+
+![Relationships Many To Many](../assets/generators/relationship-n2n.png)
+
+```php
+<?php
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->foreignId('category_id')->index();
+            $table->foreignId('post_id')->index();
+            $table->primary(['category_id', 'post_id']);
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('category_post');
+    }
+};
+
+```

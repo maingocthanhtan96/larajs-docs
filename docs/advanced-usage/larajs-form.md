@@ -1,6 +1,6 @@
-## Introduction
+## 🌟 Introduction
 
-We use [Element Plus](https://element-plus.org/en-US/component/form.html#form) and `JSX` to create the `LaraForm` component.
+We utilize [Element Plus Form](https://element-plus.org/en-US/component/form.html#form) and `JSX` to create the dynamic `LaraForm` component. This allows for seamless form handling with responsive UI elements.
 
 ```vue
 <script setup lang="ts">
@@ -14,13 +14,15 @@ const {id, form, state, formElement} = useCategoryForms();
 </template>
 ```
 
-**UI**
+**UI Preview**
 
 <center>
     <img src="../assets/generators/form.png" alt="larajs-form" />
 </center>
 
-## Form.tsx
+## 🔧 Form.tsx
+
+Here’s the TypeScript code that powers the form logic and setup, providing full control over form structure, validation, and submission.
 
 ```tsx
 export function useCategoryForms() {
@@ -92,13 +94,13 @@ export function categoryRules(): FormRules {
 }
 ```
 
-## Form Attributes
+## ⚙️ Form Attributes
 
-| **Name** | **Description**                                                                                                                                                      | **Type**            | **Default**                                                  |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------ |
-| name     | Used for integration with `i18n` and `router`, providing localization support and route handling for the table.                                                      | `string`            | —                                                            |
-| ref      | Provides a reference to access the LaraForm component directly, enabling interaction with or manipulation of the form instance programmatically.                     | `Ref` \| `null`     | —                                                            |
-| form     | Inherits all props from the [Form API](https://element-plus.org/en-US/component/form.html#form-api), giving full control over the form’s behavior and appearance     | `Form`              | —                                                            |
-| row      | Inherits all props from the [Row API](https://element-plus.org/en-US/component/layout.html#row-api), allowing you to set the layout and structure of the form rows.  | `Partial<RowProps>` | —                                                            |
-| items    | Specifies the form items to be displayed, defining their structure and appearance. This allows you to customize fields and inputs dynamically in the form.           | `Items`             | —                                                            |
-| actions  | Defines the API actions for the form, such as `create`, `update`, or custom actions. This controls how the form interacts with the backend, such as submitting data. | `IAction`           | `[{template: 'cancel'},{template: id ? 'update' : 'store'}]` |
+| **Name** | **Description**                                                                                                                                              | **Type**            | **Default**                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------------------------------------------------------------ |
+| name     | Used for integration with `i18n` and `router`, providing localization support and route handling for form data.                                              | `string`            | —                                                            |
+| ref      | Provides a reference to access the `LaraForm` component, allowing for programmatic interaction with the form.                                                | `Ref` \| `null`     | —                                                            |
+| form     | Inherits properties from the [Form API](https://element-plus.org/en-US/component/form.html#form-api), giving full control over form behavior and appearance. | `Form`              | —                                                            |
+| row      | Inherits properties from the [Row API](https://element-plus.org/en-US/component/layout.html#row-api), allowing layout control of form rows.                  | `Partial<RowProps>` | —                                                            |
+| items    | Defines the form fields dynamically, allowing customization of the form layout, components, and input elements.                                              | `Items`             | —                                                            |
+| actions  | Specifies API actions for the form, such as create or update, and allows custom actions to handle form submissions.                                          | `IAction`           | `[{template: 'cancel'},{template: id ? 'update' : 'store'}]` |

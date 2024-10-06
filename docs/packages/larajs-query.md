@@ -1,8 +1,14 @@
-## Introduction
+---
+outline: deep
+---
 
-This package allows you to filter, sort, and include Eloquent relationships dynamically based on incoming requests. It simplifies the process of querying and retrieving resources by providing a flexible interface for client-side queries.
+## 🌟 Introduction
 
-## Quick start
+This package simplifies querying Eloquent models by dynamically filtering, sorting, and including relationships based on incoming requests. It provides a flexible interface for client-side queries and streamlines the process of querying and retrieving resources.
+
+## ⚡ Quick Start
+
+Here’s how to integrate the package with your Laravel controllers:
 
 ```php
 <?php
@@ -21,9 +27,9 @@ class CategoryController
 }
 ```
 
-## Filtering
+## 🔍 Filtering
 
-Resources can be filtered by attributes using the `filter` query string parameter. By default, all attributes are filterable.
+Easily filter resources by attributes using the `filter` query string parameter. The following operations are supported:
 
 ```http
 ?filter=expression
@@ -53,9 +59,9 @@ Resources can be filtered by attributes using the `filter` query string paramete
 | Conditional logical OR          | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                   |
 | Conditional logical AND         | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                  |
 
-## Sorting
+## ⬆️ Sorting
 
-Resources can be sorted by attributes using the `sort` query string parameter. By default, all attributes are sortable.
+You can sort resources by attributes using the `sort` query string parameter. The following operations are available:
 
 | **Operation**       | **Example**                       |
 | ------------------- | --------------------------------- |
@@ -67,7 +73,7 @@ Resources can be sorted by attributes using the `sort` query string parameter. B
 
 **Sort Relationships**
 
-We leverage the [BelongsToThrough](https://github.com/staudenmeir/belongs-to-through) package to manage relationships that involve unlimited intermediate models.
+We leverage the [BelongsToThrough](https://github.com/staudenmeir/belongs-to-through) package to manage complex relationships.
 
 `Comment` → belongs to → `Post` → belongs to → `User` → belongs to → `Country`
 
@@ -79,9 +85,9 @@ You can sort `Comment` records based on the `name` attribute of the related `Cou
 {url}/comments?sort=country.name
 ```
 
-## Searching
+## 🔎 Searching
 
-Resources can be searched by attributes using the `search` query string parameter. By default, the search will apply a `whereLike(attribute, '%value%')` query, performing a partial match on the specified value.
+Perform searches across attributes using the `search` query string parameter,. The search will apply a `whereLike(attribute, '%value%')` query, performing a partial match on the specified value.
 
 | **Operation**       | **Example**                                         |
 | ------------------- | --------------------------------------------------- |
@@ -89,9 +95,9 @@ Resources can be searched by attributes using the `search` query string paramete
 | Multiple attributes | `?search[column]=name,content&search[value]=larajs` |
 | Relationships       | `?search[column]=roles.name&search[value]=admin`    |
 
-## Including Relationships
+## 🔗 Including Relationships
 
-Resources can include related models using the `include` query string parameter. By default, all attributes, including model relationships, can be included.
+Include related models with the `include` query string parameter:
 
 | **Operation**                                  | **Example**                                                                     |
 | ---------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -99,25 +105,25 @@ Resources can include related models using the `include` query string parameter.
 | Multiple Attributes                            | `?include[]=roles&include[]=roles.permissions`                                  |
 | Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists` |
 
-## Selecting Fields
+## ✂️ Selecting Fields
 
-Resources can be selected by attributes using the `select` query string parameter. By default, all attributes are selectable.
+Select specific fields using the select query string parameter:
 
 | **Operation** | **Example**                   |
 | ------------- | ----------------------------- |
 | Attributes    | `?select=id,name,description` |
 
-## Dating
+## 📅 Date Filtering
 
-Resources can be filtered by date attributes using the `date` query string parameter. By default, the search will automatically apply a `whereBetween(attribute, [startOfDate, endOfDate])` query, allowing you to filter resources within a specific date range.
+Filter resources by date attributes using the `date` query string parameter, which automatically applies a `whereBetween(attribute, [startOfDate, endOfDate])` query.
 
 | **Operation** | **Example**                                                                    |
 | ------------- | ------------------------------------------------------------------------------ |
 | Attributes    | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15` |
 
-## Pagination
+## 📄 Pagination
 
-Resources can be paginated by attributes using the `pagination` query string parameter. By default, the pagination type is `default`.
+Paginate resources with the `pagination` query string parameter:
 
 | **Operation** | **Example**                                                                                   |
 | ------------- | --------------------------------------------------------------------------------------------- |
@@ -125,9 +131,9 @@ Resources can be paginated by attributes using the `pagination` query string par
 | `simple`      | `?pagination[type]=simple&pagination[limit]=25&pagination[page]=1`                            |
 | `cursor`      | `?pagination[type]=cursor&pagination[cursor]=eyJpZCI6MTUsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0` |
 
-## Allow Query
+## 🔓 Allow Query
 
-By default, all fields are available for querying. However, you can configure the system to exclude certain fields as needed.
+By default, all fields in a model are available for querying. However, you can configure the system to exclude certain fields as necessary by overriding the `allowQueryParsers` method in your models.
 
 ```php
 <?php
@@ -136,29 +142,32 @@ class Category extends Model
 {
     public function allowQueryParsers(): array
     {
-        // Default configuration
+        // Default configuration (all fields are available)
         return [
-            'field' => [], // select
-            'include' => [],
-            'sort' => [],
-            'filter' => [],
-            'search' => [],
-            'date' => [],
+            'field' => [],       // Fields available for `select`
+            'include' => [],     // Relationships that can be included
+            'sort' => [],        // Fields that can be used for sorting
+            'filter' => [],      // Fields that can be filtered
+            'search' => [],      // Fields available for searching
+            'date' => [],        // Date fields available for filtering by date range
         ];
-        // Custom configuration
+
+        // Custom configuration (example)
         return [
-            'field' => ['id', 'name', 'email'], // select
-            'include' => ['roles'],
-            'sort' => ['id', 'updated_at'],
-            'filter' => ['name', 'age', 'lastModified'],
-            'search' => ['id', 'name', 'roles'],
-            'date' => ['updated_at'],
+            'field' => ['id', 'name', 'email'],       // Only these fields can be selected
+            'include' => ['roles'],                   // Only the 'roles' relationship can be included
+            'sort' => ['id', 'updated_at'],           // Only these fields can be used for sorting
+            'filter' => ['name', 'age'],              // Only these fields can be filtered
+            'search' => ['id', 'name', 'roles'],      // Only these fields can be searched
+            'date' => ['updated_at'],                 // Only this date field can be filtered by range
         ];
     }
 }
 ```
 
-## Repository
+## 🔧 Repository Structure
+
+Here’s the structure of the repository and its core classes:
 
 ```txt
 .
@@ -169,7 +178,9 @@ class Category extends Model
 └── WriteRepositoryInterface.php
 ```
 
-**BaseLaraJSRepository**
+### BaseLaraJSRepository
+
+This abstract class defines the foundation for all repositories:
 
 ```php
 <?php
@@ -183,6 +194,8 @@ abstract class BaseLaraJSRepository implements ReadRepositoryInterface, WriteRep
 ```
 
 ### ReadRepository
+
+This repository handles reading data from the database:
 
 ```php
 <?php
@@ -233,6 +246,8 @@ class ReadRepository implements ReadRepositoryInterface
 ```
 
 ### WriteRepository
+
+Handles the creation, updating, and deletion of data:
 
 ```php
 <?php

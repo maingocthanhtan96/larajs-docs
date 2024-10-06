@@ -1,6 +1,6 @@
-## Introduction
+## 🌟 Introduction
 
-We use [Element Plus](https://element-plus.org/en-US/component/table.html#table) and `JSX` to create the `LaraTable` component.
+We use [Element Plus Table](https://element-plus.org/en-US/component/table.html#table) and `JSX` to create the dynamic `LaraTable` component. This setup allows for easy customization and robust table functionality with dynamic queries and actions.
 
 ```vue
 <script setup lang="ts">
@@ -14,13 +14,15 @@ const {table} = useCategoryTables();
 </template>
 ```
 
-**UI**
+**UI Preview**
 
 <center>
     <img src="../assets/generators/table.png" alt="larajs-table" />
 </center>
 
-## Table.tsx
+## ⚙️ Table.tsx
+
+Here’s the TypeScript code that manages the table logic and setup. It offers full control over sorting, filtering, column management, and API integration.
 
 ```tsx
 export function useCategoryTables() {
@@ -78,7 +80,7 @@ export function useCategoryTables() {
 }
 ```
 
-## Table Attributes
+## 📋 Table Attributes
 
 | **Name** | **Description**                                                                                                                                                       | **Type**                                                                   | **Default**                                      |
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ |

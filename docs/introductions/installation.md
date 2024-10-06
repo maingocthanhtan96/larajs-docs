@@ -1,22 +1,22 @@
-## Requirements
+## 🚀 Requirements
 
-LaraJS has a few requirements you should be aware of before installing:
+Before installing LaraJS, ensure that your environment meets the following requirements:
 
-- PHP 8.3+
-- Composer
-- Node.js (version 20.x+)
-- Yarn
+- 🐘 PHP 8.3+
+- 🎼 Composer
+- 🟢 Node.js (version 20.x+)
+- 🧶 Yarn
 
-## Browser Support
+## 🌐 Browser Support
 
 LaraJS supports modern versions of the following browsers:
 
-- Apple Safari
-- Google Chrome
-- Microsoft Edge
-- Mozilla Firefox
+- 🍏 Apple Safari
+- 🔵 Google Chrome
+- 🟣 Microsoft Edge
+- 🟠 Mozilla Firefox
 
-## Installation
+## ⚙️ Installation
 
 **1. Create database**
 
@@ -25,11 +25,15 @@ LaraJS supports modern versions of the following browsers:
 
 **2. Run script**
 
+Execute the following command to run the setup:
+
 ```php
 php ./apps/api/artisan larajs:setup
 ```
 
 **Input**
+
+When prompted, provide the necessary information to connect to your database:
 
 ```bash
  What is the url of your app? [http://127.0.0.1:8000]:
@@ -53,6 +57,8 @@ php ./apps/api/artisan larajs:setup
 ```
 
 **Output**
+
+Once the setup is complete, you should see the following output:
 
 ```bash
 ...
