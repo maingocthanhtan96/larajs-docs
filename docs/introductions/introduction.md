@@ -2,7 +2,7 @@
   <strong style="font-size: 18px;color: red;">This document includes features from private repositories.</strong>
 </center>
 
-![LaraJS Introduction](../assets/larajs-intro.png)
+![LaraJS Introduction](../assets/larajs-intro.jpg)
 
 ## LaraJS
 

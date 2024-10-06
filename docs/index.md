@@ -7,7 +7,7 @@ hero:
   # text: "LaraJS Documents"
   tagline: LaraJS is optimization & management platform in technology field. The mission of LaraJS provide essential tools and features right from start of project
   image:
-    src: ./assets/larajs.png
+    src: /larajs.png
     alt: LaraJS
   actions:
     - theme: brand
@@ -18,10 +18,10 @@ hero:
       link: https://youtu.be/fJ3Inyi034k
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Generator
+    details: The Generator lets users define and configure models and fields for Laravel applications, simplifying model creation and database setup.
+  - title: Packages
+    details: Packages offer ecosystem support for LaraJS, providing tools for linting, formatting, analysis, and testing to maintain code quality.
+  - title: Advanced usage
+    details: Advanced usage includes custom configurations and optimizations to extend LaraJS functionalities and improve performance.
 ---

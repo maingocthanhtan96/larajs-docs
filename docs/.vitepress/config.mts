@@ -4,7 +4,7 @@ import {defineConfig} from "vitepress";
 export default defineConfig({
   title: "LaraJS Docs",
   description: "LaraJS Documents",
-  head: [["link", {rel: "icon", href: "../assets/logo.png"}]],
+  head: [["link", {rel: "icon", href: "/logo.png"}]],
   themeConfig: {
     search: {
       provider: "local",
