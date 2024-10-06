@@ -1,3 +1,7 @@
+<center>
+  <strong style="font-size: 18px;color: red;">This document includes features from private repositories.</strong>
+</center>
+
 ![LaraJS Introduction](../assets/larajs-intro.png)
 
 ## LaraJS
@@ -18,18 +22,21 @@ LaraJS is a **low-code**, beautiful dashboard that combines Laravel, VueJS. It f
     - Model: Eloquent model
     - Observer: Listening for many events on a given model
     - Resource: Transformation data response
+    - API Documents
   - Database
+    - Factory
+    - Migration
+    - Seeder
   - Languages
-  - Factory
-  - API Documents
-  - Integration Test
-  - UI CMS
+  - Integration Tests
+  - UI & Logic
 - Customization
 - Client-Side Querying
 - Light/Dark Mode
-- Multiples Language
+- Multiple Languages
 - Support Responsive
-- Role Base Access Control
+- Role-Based Access Control
 - Code Lint
 - Support SSR and SSG
 - Monorepo
+- ...

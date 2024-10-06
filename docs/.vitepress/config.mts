@@ -1,18 +1,19 @@
-import { defineConfig } from "vitepress";
+import {defineConfig} from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "LaraJS Docs",
   description: "LaraJS Documents",
   base: "/larajs-docs/",
+  head: [["link", {rel: "icon", href: "../assets/logo.png"}]],
   themeConfig: {
     search: {
       provider: "local",
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Getting Started", link: "/introductions/introduction" },
+      {text: "Home", link: "/"},
+      {text: "Getting Started", link: "/introductions/introduction"},
       {
         text: "Video Demo",
         link: "https://youtu.be/fJ3Inyi034k",
@@ -65,21 +66,40 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
-            text: "Getting Started",
-            link: "/generators/getting-started",
+            text: "LaraJS Query",
+            link: "/packages/larajs-query",
           },
           {
-            text: "Backend",
-            link: "/generators/backend",
+            text: "LaraJS I18n",
+            link: "/packages/larajs-i18n",
+          },
+          // {
+          //   text: "LaraJS CQRS",
+          //   link: "/packages/larajs-cqrs",
+          // },
+        ],
+      },
+      {
+        text: "Advanced usage",
+        collapsed: false,
+        items: [
+          {
+            text: "LaraJS Table",
+            link: "/advanced-usage/larajs-table",
           },
           {
-            text: "Frontend",
-            link: "/generators/frontend",
+            text: "LaraJS Form",
+            link: "/advanced-usage/larajs-form",
+          },
+          {
+            text: "Lint & Format",
+            link: "/advanced-usage/lint-format",
           },
         ],
       },
     ],
-
-    socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],
+    socialLinks: [
+      {icon: "github", link: "https://github.com/maingocthanhtan96/LaraJS"},
+    ],
   },
 });

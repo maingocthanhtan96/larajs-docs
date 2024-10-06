@@ -22,15 +22,15 @@ The **Generator** allows users to define and configure models along with their f
 
 ## Fields Configuration Table
 
-| **Field**            | **Description**                                                                    | **Default**    | **Example**    | **Validation** |
-| -------------------- | ---------------------------------------------------------------------------------- | -------------- | -------------- | -------------- |
-| `Field Name`         | The name of the field in the database.                                             |                | `name`         | Required       |
-| `Field Name Display` | Display name for the field in the user interface.                                  |                | `Name`         | Required       |
-| `Field Option`       | Setting unique, indexing, and adding comments.                                     |                |                | Optional       |
-| `Database Type`      | The type of the field in the database (e.g., `Increments`, `VARCHAR`, `LONGTEXT`). | `VARCHAR(255)` | `VARCHAR(255)` | Required       |
-| `Default Value`      | The default value for this field if none is provided.                              | `NULL`         |                | Required       |
-| `Search/Sort/Show`   | Enable or disable search, sort, and show position in the CMS.                      |                |                | Optional       |
-| `Delete`             | Option to delete the field from the configuration.                                 |                |                |                |
+| **Field**                 | **Description**                                                                                                    | **Default**    | **Example**    | **Validation** |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------- | -------------- | -------------- |
+| `Field Name`              | The name of the field in the database.                                                                             |                | `name`         | Required       |
+| `Field Name Display`      | Display name for the field in the user interface.                                                                  |                | `Name`         | Required       |
+| `Field Option`            | Setting unique, indexing, and adding comments.                                                                     |                |                | Optional       |
+| `Database Type`           | The type of the field in the database (e.g., `Increments`, `VARCHAR`, `LONGTEXT`).                                 | `VARCHAR(255)` | `VARCHAR(255)` | Required       |
+| `Default Value`           | The default value for this field if none is provided.                                                              | `NULL`         |                | Required       |
+| `Search/Sort/Show/Layout` | On/Off `search`, `sort`, and `show` in the table. The column `layout` can be adjusted to a value between 1 and 24. |                |                | Optional       |
+| `Delete`                  | Option to delete the field from the configuration.                                                                 |                |                |                |
 
 ### Field Option
 

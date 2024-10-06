@@ -371,11 +371,11 @@ return [
 ]
 ```
 
-**Generate Vue I18n**
+**Generate I18n**
 
 ```php
 // Synchronize i18n language settings for the frontend.
-php artisan vue-i18n:generate
+php artisan larajs:i18n
 // packages/common/src/lang/vue-i18n-locales.generated.json
 ```
 
