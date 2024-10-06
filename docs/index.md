@@ -18,10 +18,13 @@ hero:
       link: https://youtu.be/fJ3Inyi034k
 
 features:
-  - title: Generator
+  - title: "🔧 Generator"
     details: The Generator lets users define and configure models and fields for Laravel applications, simplifying model creation and database setup.
-  - title: Packages
+    link: /generators/getting-started
+  - title: "📦 Packages"
     details: Packages offer ecosystem support for LaraJS, providing tools for linting, formatting, analysis, and testing to maintain code quality.
-  - title: Advanced usage
+    link: /packages/larajs-query
+  - title: "⚙️ Advanced usage"
     details: Advanced usage includes custom configurations and optimizations to extend LaraJS functionalities and improve performance.
+    link: /advanced-usage/larajs-table
 ---

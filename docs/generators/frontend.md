@@ -253,6 +253,8 @@ onBeforeMount(async () => {
 </template>
 ```
 
+**UI Preview**
+
 <center>
   <img src="../assets/generators/form.png" alt="larajs-form" />
 </center>
@@ -293,6 +295,8 @@ const {table} = useCategoryTables();
   </el-card>
 </template>
 ```
+
+**UI Preview**
 
 <center>
   <img src="../assets/generators/table.png" alt="larajs-table" />

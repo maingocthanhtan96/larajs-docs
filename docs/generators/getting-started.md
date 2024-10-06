@@ -6,6 +6,8 @@ outline: deep
 
 The **Generator** allows users to define and configure models along with their fields for a Laravel application. Users can customize the model name, fields, relationships, and other attributes that will be used to generate the backend API, database, and frontend CMS.
 
+**UI Preview**
+
 ![Generator](../assets/generators/generator.png)
 
 ## 📄 Model Configuration
@@ -45,6 +47,8 @@ The **Generator** allows users to define and configure models along with their f
 | `Unique`   | Ensures the field value is unique across all records in the database.                             | Enabled for `email` field to ensure unique emails.  |
 | `Index`    | Creates an index on the field to optimize database query performance.                             | Enabled for `status` field to improve search speed. |
 | `Comment`  | Adds a comment for the field in the database, useful for documentation or clarification purposes. | Indicates if the category is active or inactive.    |
+
+**UI Preview**
 
 ![Generator Option](../assets/generators/generator-option.png)
 
@@ -91,19 +95,19 @@ The **Generator** allows users to define and configure models along with their f
 
 Each **Database Type** will feature a distinct UI, with our focus centered on utilizing the **Element Plus** components.
 
-| **Database Type**                                                                                                                                                                           | **UI**                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| `INTEGER`, `UNSIGNED INTEGER`, `TINYINT`, `UNSIGNED TINYINT`, `SMALLINT`, `UNSIGNED SMALLINT`, `MEDIUMINT`, `UNSIGNED MEDIUMINT`, `BIGINT`, `UNSIGNED BIGINT`, `FLOAT`, `DOUBLE`, `DECIMAL` | ![integer](../assets/generators/ui/integer.png)   |
-| `BOOLEAN`                                                                                                                                                                                   | ![boolean](../assets/generators/ui/boolean.png)   |
-| `DATE`                                                                                                                                                                                      | ![date](../assets/generators/ui/date.png)         |
-| `DATETIME`, `TIMESTAMP`                                                                                                                                                                     | ![integer](../assets/generators/ui/datetime.png)  |
-| `TIME`                                                                                                                                                                                      | ![time](../assets/generators/ui/time.png)         |
-| `YEAR`                                                                                                                                                                                      | ![year](../assets/generators/ui/year.png)         |
-| `CHAR`, `VARCHAR`                                                                                                                                                                           | ![varchar](../assets/generators/ui/varchar.png)   |
-| `TINYTEXT`, `MEDIUMTEXT`, `TEXT`                                                                                                                                                            | ![text](../assets/generators/ui/text.png)         |
-| `LONGTEXT`                                                                                                                                                                                  | ![longtext](../assets/generators/ui/longtext.png) |
-| `ENUM`                                                                                                                                                                                      | ![enum](../assets/generators/ui/enum.png)         |
-| `JSON`, `JSONB`                                                                                                                                                                             | ![json](../assets/generators/ui/json.png)         |
+| **Database Type**                                                                                                                                                                           |                          **UI Preview**                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------: |
+| `INTEGER`, `UNSIGNED INTEGER`, `TINYINT`, `UNSIGNED TINYINT`, `SMALLINT`, `UNSIGNED SMALLINT`, `MEDIUMINT`, `UNSIGNED MEDIUMINT`, `BIGINT`, `UNSIGNED BIGINT`, `FLOAT`, `DOUBLE`, `DECIMAL` | <center>![integer](../assets/generators/ui/integer.png)</center> |
+| `BOOLEAN`                                                                                                                                                                                   | <center>![boolean](../assets/generators/ui/boolean.png)</center> |
+| `DATE`                                                                                                                                                                                      |            ![date](../assets/generators/ui/date.png)             |
+| `DATETIME`, `TIMESTAMP`                                                                                                                                                                     |         ![integer](../assets/generators/ui/datetime.png)         |
+| `TIME`                                                                                                                                                                                      |            ![time](../assets/generators/ui/time.png)             |
+| `YEAR`                                                                                                                                                                                      |            ![year](../assets/generators/ui/year.png)             |
+| `CHAR`, `VARCHAR`                                                                                                                                                                           |         ![varchar](../assets/generators/ui/varchar.png)          |
+| `TINYTEXT`, `MEDIUMTEXT`, `TEXT`                                                                                                                                                            |            ![text](../assets/generators/ui/text.png)             |
+| `LONGTEXT`                                                                                                                                                                                  |        ![longtext](../assets/generators/ui/longtext.png)         |
+| `ENUM`                                                                                                                                                                                      |            ![enum](../assets/generators/ui/enum.png)             |
+| `JSON`, `JSONB`                                                                                                                                                                             |            ![json](../assets/generators/ui/json.png)             |
 
 ## 🔗 Relationships
 
@@ -119,11 +123,15 @@ Example:
 
 This way just only for `hasMany` or `belongsTo`
 
+**UI Preview**
+
 ![Relationships Form](../assets/generators/relationship-1.png)
 
 ### 📝 Relationship Form
 
 This way for all relationship such as: `hasOne`, `hasMany`, `belongsToMany`
+
+**UI Preview**
 
 ![Relationships Form](../assets/generators/relationship-2.png)
 
@@ -132,6 +140,8 @@ This way for all relationship such as: `hasOne`, `hasMany`, `belongsToMany`
 **🔄 Many To Many**
 
 Many to many will generate pivot table. By default, the pivot table is `CategoryPost` (`{Model1}` + `{Model2}`).
+
+**UI Preview**
 
 ![Relationships Many To Many](../assets/generators/relationship-n2n.png)
 
