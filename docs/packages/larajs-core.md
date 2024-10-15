@@ -131,7 +131,9 @@ Route::group([ 'prefix' => 'api/v1', 'middleware' => ['api']],
 
 ```
 
-## 👤 User Signature
+## 🔄 Traits
+
+### 👤 User Signature
 
 Automatically track the `created_by` and `updated_by` fields on your models with the `UserSignature` trait, ensuring that user information is logged with every change to the database.
 
@@ -145,6 +147,71 @@ trait UserSignature
     protected static function bootUserSignature()
     {
        ...
+    }
+}
+```
+
+### 🚀 Action
+
+The `Action` trait provides a streamlined way to create and execute action classes in your Laravel application.
+
+```php
+<?php
+
+namespace LaraJS\Core\Traits;
+
+use Illuminate\Support\Fluent;
+
+trait Action
+{
+    // Instantiates the action class.
+    public static function make(): static
+    {
+        return app(static::class);
+    }
+
+    // Executes the handle() method.
+    public static function run(...$arguments): mixed
+    {
+    }
+
+    // Runs validation if available.
+    public static function runValidate(...$arguments): mixed
+    {
+    }
+
+    // Runs the action if the condition is true.
+    public static function runIf($boolean, ...$arguments): mixed
+    {
+    }
+
+    // Runs the action if the condition is false.
+    public static function runUnless($boolean, ...$arguments): mixed
+    {
+    }
+}
+```
+
+Example of a simple action:
+
+```php
+<?php
+
+use LaraJS\Core\Traits\Action;
+
+class UpdateAvatarAction
+{
+    use Action;
+
+    public function handle(string $oldAvatar, UploadedFile|string $newAvatar): ?string
+    {
+    }
+
+    public function validate(string $oldAvatar, UploadedFile|string $newAvatar): self
+    {
+        \Validator::make(['avatar' => ['max:10240', 'image', 'mimes:jpeg,png,jpg']], $rules)->validate();
+
+        return $this;
     }
 }
 ```

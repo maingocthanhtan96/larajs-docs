@@ -80,13 +80,9 @@ export default defineConfig({
             text: "LaraJS Generator",
             link: "/packages/larajs-generator",
           },
-          // {
-          //   text: "LaraJS CQRS",
-          //   link: "/packages/larajs-cqrs",
-          // },
           {
-            text: "LaraJS Boilerplate",
-            link: "/packages/larajs-boilerplate",
+            text: "LaraJS CQRS",
+            link: "/packages/larajs-cqrs",
           },
         ],
       },
@@ -105,6 +101,16 @@ export default defineConfig({
           {
             text: "Lint & Format",
             link: "/advanced-usage/lint-format",
+          },
+        ],
+      },
+      {
+        text: "Templates",
+        collapsed: false,
+        items: [
+          {
+            text: "LaraJS Boilerplate",
+            link: "/templates/larajs-boilerplate",
           },
         ],
       },

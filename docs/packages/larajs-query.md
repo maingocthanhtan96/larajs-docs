@@ -22,7 +22,7 @@ class CategoryController
 
     public function index(Request $request)
     {
-        return $this->applyLaraJSQuery(Category::query(), $request)->get();
+        return $this->applyLaraJSQuery(Category::query(), $request->query())->get();
     }
 }
 ```
@@ -138,29 +138,23 @@ By default, all fields in a model are available for querying. However, you can c
 ```php
 <?php
 
-class Category extends Model
-{
-    public function allowQueryParsers(): array
-    {
-        // Default configuration (all fields are available)
-        return [
-            'field' => [],       // Fields available for `select`
-            'include' => [],     // Relationships that can be included
-            'sort' => [],        // Fields that can be used for sorting
-            'filter' => [],      // Fields that can be filtered
-            'search' => [],      // Fields available for searching
-            'date' => [],        // Date fields available for filtering by date range
-        ];
+use App\Models\Category;
+use LaraJS\Query\LaraJSQuery;
 
-        // Custom configuration (example)
-        return [
-            'field' => ['id', 'name', 'email'],       // Only these fields can be selected
-            'include' => ['roles'],                   // Only the 'roles' relationship can be included
-            'sort' => ['id', 'updated_at'],           // Only these fields can be used for sorting
-            'filter' => ['name', 'age'],              // Only these fields can be filtered
-            'search' => ['id', 'name', 'roles'],      // Only these fields can be searched
-            'date' => ['updated_at'],                 // Only this date field can be filtered by range
-        ];
+class CategoryController
+{
+    use LaraJSQuery;
+
+    public function index(Request $request)
+    {
+        return $this->applyLaraJSQuery(Category::query(), $request->query(), [
+            'field' => ['id', 'name', 'description'],
+            'include' => ['roles'],
+            'sort' => ['id', 'updated_at'],
+            'filter' => ['name', 'age'],
+            'search' => ['id', 'name', 'roles'],
+            'date' => ['updated_at'],
+        ])->get();
     }
 }
 ```
@@ -210,20 +204,19 @@ class ReadRepository implements ReadRepositoryInterface
 
     public function __construct(protected readonly Model $model, protected readonly int $limit, protected readonly int $maxLimit) {}
 
-    public function findAll(Request $request): LengthAwarePaginator|CursorPaginator|Paginator|Collection
+    public function findAll(Request $request, array $allows = []): LengthAwarePaginator|CursorPaginator|Paginator|Collection
     {
-        $queryBuilder = $this->applyLaraJSQuery($this->query(), $request);
+        $queryBuilder = $this->applyLaraJSQuery($this->query(), $request->query(), $allows);
         // The pagination.page === -1 LaraJSQuery will get all records
         if ($request->input('pagination.page') === '-1') {
-            $limit = min($this->maxLimit, $request->input('pagination.limit'));
-
+            // ...
             return $queryBuilder->take($limit)->get();
         }
 
         return match ($request->input('pagination.type')) {
-            'simple' => ...,
-            'cursor' => ...,
-            default => ...,
+            'simple' => $queryBuilder->simplePaginate($limit, pageName: 'pagination[page]'),
+            'cursor' => $queryBuilder->cursorPaginate($limit, cursorName: 'pagination[cursor]'),
+            default => $queryBuilder->paginate($limit, pageName: 'pagination[page]'),
         };
     }
 
