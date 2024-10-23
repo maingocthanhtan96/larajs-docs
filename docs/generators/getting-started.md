@@ -24,6 +24,7 @@ The **Generator** allows users to define and configure models along with their f
 | `Timestamps`     | Automatically adds `created_at` and `updated_at` columns to the table.           | Checked     |             | Optional       |
 | `Soft Deletes`   | Adds support for soft deletion (adds a `deleted_at` column).                     | Checked     |             | Optional       |
 | `User Signature` | Adds `created_by` and `updated_by` columns to track who created/updated records. | UnChecked   |             | Optional       |
+| `APi Only`       | Only generate the API                                                            | UnChecked   |             | Optional       |
 | `Ignore Migrate` | Skips running database migrations.                                               | UnChecked   |             | Optional       |
 | `Only Migrate`   | Only generate migration and Model.                                               | UnChecked   |             | Optional       |
 | `Test Cases`     | Generates test cases for the model and related services.                         | Checked     |             | Optional       |

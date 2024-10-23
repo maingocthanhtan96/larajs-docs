@@ -1,18 +1,18 @@
-import {defineConfig} from "vitepress";
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "LaraJS Docs",
   description: "LaraJS Documents",
-  head: [["link", {rel: "icon", href: "/logo.png"}]],
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
   themeConfig: {
     search: {
       provider: "local",
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      {text: "Home", link: "/"},
-      {text: "Getting Started", link: "/introductions/introduction"},
+      { text: "Home", link: "/" },
+      { text: "Getting Started", link: "/introductions/introduction" },
       {
         text: "Video Demo",
         link: "https://youtu.be/fJ3Inyi034k",
@@ -80,9 +80,13 @@ export default defineConfig({
             text: "LaraJS Generator",
             link: "/packages/larajs-generator",
           },
+          // {
+          //   text: "LaraJS CQRS",
+          //   link: "/packages/larajs-cqrs",
+          // },
           {
-            text: "LaraJS CQRS",
-            link: "/packages/larajs-cqrs",
+            text: "LaraJS Permission",
+            link: "/packages/larajs-permission",
           },
         ],
       },
@@ -116,7 +120,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      {icon: "github", link: "https://github.com/maingocthanhtan96/LaraJS"},
+      { icon: "github", link: "https://github.com/maingocthanhtan96/LaraJS" },
     ],
   },
 });
