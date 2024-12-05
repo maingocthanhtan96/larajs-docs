@@ -1,4 +1,4 @@
-# 🛠️ CMS Structure (Monorepo)
+# CMS Structure (Monorepo)
 
 We generate the CMS according to the following structure
 
@@ -33,7 +33,7 @@ We generate the CMS according to the following structure
 └── ...
 ```
 
-## 🌐 API Integration
+## API Integration
 
 ```ts
 class CategoryResource extends Resource<Category> {
@@ -69,7 +69,7 @@ export function useCategoryApis() {
 }
 ```
 
-## 🚦 Router Setup
+## Router Setup
 
 There are two types of routes here , `constantRoutes` and `asyncRoutes`.
 
@@ -126,16 +126,16 @@ const category: RouterMapping = {
 export default category;
 ```
 
-## 🛠️ Uses (Hooks)
+## Uses (Hooks)
 
 **Category Forms (form.tsx)**
 
 ```tsx
 export function useCategoryForms() {
   const route = useRoute();
-  const {t} = useI18n();
+  const { t } = useI18n();
   const id = route.params.id as string;
-  const {createCategory, updateCategory} = useCategoryApis();
+  const { createCategory, updateCategory } = useCategoryApis();
   const formRef = ref<FormInstance>();
   const form = reactive<Category>({
     id: 0,
@@ -174,8 +174,8 @@ export function categoryRules(): FormRules {
 
 ```tsx
 export function useCategoryTables() {
-  const {getCategories, deleteCategory} = useCategoryApis();
-  const {t} = useI18n();
+  const { getCategories, deleteCategory } = useCategoryApis();
+  const { t } = useI18n();
   const table: LaraTableType<Category> = {
     name: "category",
     actions: {
@@ -219,15 +219,15 @@ export function useCategoryTables() {
 }
 ```
 
-## 📋 Views
+## Views
 
 **Form.vue**
 
 ```vue
 <script setup lang="ts">
-const {t} = useI18n();
-const {id, form, state, formElement} = useCategoryForms();
-const {getCategory} = useCategoryApis();
+const { t } = useI18n();
+const { id, form, state, formElement } = useCategoryForms();
+const { getCategory } = useCategoryApis();
 const coreStore = useCoreStore();
 const cancelToken = useCancelToken();
 
@@ -235,8 +235,8 @@ onBeforeMount(async () => {
   coreStore.setLoading(true);
   if (id) {
     const {
-      data: {data: category},
-    } = await getCategory(id, {cancelToken});
+      data: { data: category },
+    } = await getCategory(id, { cancelToken });
     objectAssign(form, category);
   }
   coreStore.setLoading(false);
@@ -263,8 +263,8 @@ onBeforeMount(async () => {
 
 ```vue
 <script setup lang="ts">
-const {t} = useI18n();
-const {table} = useCategoryTables();
+const { t } = useI18n();
+const { table } = useCategoryTables();
 </script>
 
 <template>
@@ -273,8 +273,8 @@ const {table} = useCategoryTables();
       <div class="flex items-center justify-between">
         <h3>{{ t("route.category_overview") }}</h3>
         <router-link
-          v-slot="{href, navigate}"
-          :to="{name: 'CategoryCreate'}"
+          v-slot="{ href, navigate }"
+          :to="{ name: 'CategoryCreate' }"
           custom
         >
           <a
@@ -302,7 +302,7 @@ const {table} = useCategoryTables();
   <img src="../assets/generators/table.png" alt="larajs-table" />
 </center>
 
-## 🗃️ Model Interface
+## Model Interface
 
 ```ts
 export interface Category {

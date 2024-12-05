@@ -1,4 +1,4 @@
-# 🛠️ API Structure (Monorepo)
+# API Structure (Monorepo)
 
 We generate the API according to the following structure
 
@@ -57,7 +57,7 @@ We generate the API according to the following structure
 └── ...
 ```
 
-## 📝 Form Request
+## Form Request
 
 The form request is used to validate the data before performing any actions in the controller.
 
@@ -82,7 +82,7 @@ class StoreCategoryRequest extends FormRequest
 }
 ```
 
-## 🗂️ Controller
+## Controller
 
 The controller handles API requests for category management.
 
@@ -127,7 +127,7 @@ class CategoryController extends Controller implements HasMiddleware
 }
 ```
 
-## 💼 Service
+## Service
 
 The service layer handles the business logic for categories.
 
@@ -170,7 +170,7 @@ readonly class CategoryService
 }
 ```
 
-## 📦 Repository
+## Repository
 
 **CategoryRepository.php**
 
@@ -210,7 +210,7 @@ namespace App\Repositories\Category;
 interface CategoryRepositoryInterface extends BaseRepositoryInterface {}
 ```
 
-## 📑 API Documentation
+## API Documentation
 
 We leverage [Laravel Scribe](https://scribe.knuckles.wtf/laravel/) to automatically generate API documentation.
 
@@ -224,7 +224,7 @@ php artisan scribe:generate
     <img src="../assets/generators/api-docs.png" alt="Api Document" />
 </center>
 
-## 📋 Eloquent Resource
+## Eloquent Resource
 
 Resources transform your model data into JSON for API responses.
 
@@ -242,7 +242,7 @@ class CategoryResource extends JsonResource
 }
 ```
 
-## 🗃️ Model
+## Model
 
 ```php
 <?php
@@ -262,7 +262,7 @@ class Category extends Model
 }
 ```
 
-## 🛠️ Database
+## Database
 
 ### Factory
 
@@ -323,7 +323,7 @@ class CategorySeeder extends Seeder
 }
 ```
 
-## 🌐 Language
+## Language
 
 **route.php**
 
@@ -353,7 +353,7 @@ return [
 ];
 ```
 
-## 🌐 Language
+## Language Generator
 
 By default, we generate language configurations for en (English), ja (Japanese), and vi (Vietnamese). If you need to add more languages, you can extend the configuration by following these steps:
 
@@ -411,7 +411,7 @@ php artisan larajs:i18n
     └── ...
 ```
 
-## 🧩 Route
+## Route
 
 The API routes for version 1 are defined in the following file:
 
@@ -426,7 +426,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
 ```
 
-## 🧪 Tests
+## Tests
 
 When the `Test Cases` option is checked, we automatically generate integration tests to ensure the API functions correctly.
 

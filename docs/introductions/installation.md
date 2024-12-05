@@ -1,4 +1,4 @@
-## 🚀 Requirements
+## Requirements
 
 Before installing LaraJS, ensure that your environment meets the following requirements:
 
@@ -7,7 +7,7 @@ Before installing LaraJS, ensure that your environment meets the following requi
 - 🟢 Node.js (version 20.x+)
 - 🧶 Yarn
 
-## 🌐 Browser Support
+## Browser Support
 
 LaraJS supports modern versions of the following browsers:
 
@@ -16,7 +16,7 @@ LaraJS supports modern versions of the following browsers:
 - 🟣 Microsoft Edge
 - 🟠 Mozilla Firefox
 
-## ⚙️ Installation
+## Installation
 
 **1. Create database**
 

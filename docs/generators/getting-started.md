@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# 🛠️ Generator Overview
+# Generator Overview
 
 The **Generator** allows users to define and configure models along with their fields for a Laravel application. Users can customize the model name, fields, relationships, and other attributes that will be used to generate the backend API, database, and frontend CMS.
 
@@ -10,14 +10,14 @@ The **Generator** allows users to define and configure models along with their f
 
 ![Generator](../assets/generators/generator.png)
 
-## 📄 Model Configuration
+## Model Configuration
 
 | **Field**            | **Description**               | **Default** | **Example**        | **Validation** |
 | -------------------- | ----------------------------- | ----------- | ------------------ | -------------- |
 | `Model Name`         | Defines the name of the model |             | `Category`         | Required       |
 | `Model Name Display` | Display name in menu bar      |             | `Category Sidebar` | Required       |
 
-## ⚙️ Options
+## Options
 
 | **Field**        | **Description**                                                                  | **Default** | **Example** | **Validation** |
 | ---------------- | -------------------------------------------------------------------------------- | ----------- | ----------- | -------------- |
@@ -29,7 +29,7 @@ The **Generator** allows users to define and configure models along with their f
 | `Only Migrate`   | Only generate migration and Model.                                               | UnChecked   |             | Optional       |
 | `Test Cases`     | Generates test cases for the model and related services.                         | Checked     |             | Optional       |
 
-## 🏗️ Fields Configuration
+## Fields Configuration
 
 | **Field**                 | **Description**                                                                                                    | **Default**    | **Example**    | **Validation** |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------- | -------------- | -------------- |
@@ -110,7 +110,7 @@ Each **Database Type** will feature a distinct UI, with our focus centered on ut
 | `ENUM`                                                                                                                                                                                      |            ![enum](../assets/generators/ui/enum.png)             |
 | `JSON`, `JSONB`                                                                                                                                                                             |            ![json](../assets/generators/ui/json.png)             |
 
-## 🔗 Relationships
+## Relationships
 
 There are two ways to create relationships in our system:
 

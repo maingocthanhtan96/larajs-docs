@@ -1,4 +1,4 @@
-# 🏗️ Project Structure (Monorepo)
+# Project Structure (Monorepo)
 
 Your LaraJS Monorepo is organized into the following structure:
 

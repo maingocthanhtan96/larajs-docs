@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-## 🌟 Introduction
+## Introduction
 
 - The [LaraJS Boilerplate](https://github.com/maingocthanhtan96/larajs-boilerplate) is a full-stack boilerplate for Laravel and Vue 3. It's a perfect starting point for your next project.
 - I'm committed to keeping it up to date with the latest versions of both backend and frontend technologies.
@@ -15,7 +15,7 @@ outline: deep
 git clone https://github.com/maingocthanhtan96/larajs-boilerplate.git
 ```
 
-## 🚀 Features
+## Features
 
 - Backend:
   - ✅ PHP 8.3
@@ -38,7 +38,7 @@ git clone https://github.com/maingocthanhtan96/larajs-boilerplate.git
   - ✅ NProgress (Progress bar)
   - ✅ Sass (CSS preprocessor)
 
-## ⚙️ Installation
+## Installation
 
 ### Backend:
 

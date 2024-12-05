@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-## 🌟 Introduction
+## Introduction
 
 This package simplifies querying Eloquent models by dynamically filtering, sorting, and including relationships based on incoming requests. It provides a flexible interface for client-side queries and streamlines the process of querying and retrieving resources.
 
-## ⚡ Quick Start
+## Quick Start
 
 Here’s how to integrate the package with your Laravel controllers:
 
@@ -15,6 +15,7 @@ Here’s how to integrate the package with your Laravel controllers:
 
 use App\Models\Category;
 use LaraJS\Query\LaraJSQuery;
+use LaraJS\Query\DTO\QueryParserAllowDTO;
 
 class CategoryController
 {
@@ -22,12 +23,12 @@ class CategoryController
 
     public function index(Request $request)
     {
-        return $this->applyLaraJSQuery(Category::query(), $request->query())->get();
+        return $this->applyLaraJSQuery(Category::query(), QueryParserRequestDTO::fromArray($request->query()), QueryParserAllowDTO::fromArray([]))->get();
     }
 }
 ```
 
-## 🔍 Filtering
+## Filtering
 
 Easily filter resources by attributes using the `filter` query string parameter. The following operations are supported:
 
@@ -59,7 +60,7 @@ Easily filter resources by attributes using the `filter` query string parameter.
 | Conditional logical OR          | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                   |
 | Conditional logical AND         | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                  |
 
-## ⬆️ Sorting
+## Sorting
 
 You can sort resources by attributes using the `sort` query string parameter. The following operations are available:
 
@@ -85,7 +86,7 @@ You can sort `Comment` records based on the `name` attribute of the related `Cou
 {url}/comments?sort=country.name
 ```
 
-## 🔎 Searching
+## Searching
 
 Perform searches across attributes using the `search` query string parameter,. The search will apply a `whereLike(attribute, '%value%')` query, performing a partial match on the specified value.
 
@@ -95,7 +96,7 @@ Perform searches across attributes using the `search` query string parameter,. T
 | Multiple attributes | `?search[column]=name,content&search[value]=larajs` |
 | Relationships       | `?search[column]=roles.name&search[value]=admin`    |
 
-## 🔗 Including Relationships
+## Including Relationships
 
 Include related models with the `include` query string parameter:
 
@@ -105,7 +106,7 @@ Include related models with the `include` query string parameter:
 | Multiple Attributes                            | `?include[]=roles&include[]=roles.permissions`                                  |
 | Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists` |
 
-## ✂️ Selecting Fields
+## Selecting Fields
 
 Select specific fields using the select query string parameter:
 
@@ -113,7 +114,7 @@ Select specific fields using the select query string parameter:
 | ------------- | ----------------------------- |
 | Attributes    | `?select=id,name,description` |
 
-## 📅 Date Filtering
+## Date Filtering
 
 Filter resources by date attributes using the `date` query string parameter, which automatically applies a `whereBetween(attribute, [startOfDate, endOfDate])` query.
 
@@ -121,7 +122,7 @@ Filter resources by date attributes using the `date` query string parameter, whi
 | ------------- | ------------------------------------------------------------------------------ |
 | Attributes    | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15` |
 
-## 📄 Pagination
+## Pagination
 
 Paginate resources with the `pagination` query string parameter:
 
@@ -131,7 +132,7 @@ Paginate resources with the `pagination` query string parameter:
 | `simple`      | `?pagination[type]=simple&pagination[limit]=25&pagination[page]=1`                            |
 | `cursor`      | `?pagination[type]=cursor&pagination[cursor]=eyJpZCI6MTUsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0` |
 
-## 🔓 Allow Query
+## Allow Query
 
 By default, all fields in a model are available for querying. However, you can configure the system to exclude certain fields as necessary by overriding the `allowQueryParsers` method in your models.
 
@@ -147,19 +148,19 @@ class CategoryController
 
     public function index(Request $request)
     {
-        return $this->applyLaraJSQuery(Category::query(), $request->query(), [
+        return $this->applyLaraJSQuery(Category::query(), QueryParserRequestDTO::fromArray($request->query()), QueryParserAllowDTO::fromArray([
             'field' => ['id', 'name', 'description'],
             'include' => ['roles'],
             'sort' => ['id', 'updated_at'],
             'filter' => ['name', 'age'],
             'search' => ['id', 'name', 'roles'],
             'date' => ['updated_at'],
-        ])->get();
+        ]))->get();
     }
 }
 ```
 
-## 🔧 Repository Structure
+## Repository Structure
 
 Here’s the structure of the repository and its core classes:
 
@@ -204,36 +205,13 @@ class ReadRepository implements ReadRepositoryInterface
 
     public function __construct(protected readonly Model $model, protected readonly int $limit, protected readonly int $maxLimit) {}
 
-    public function findAll(Request $request, array $allows = []): LengthAwarePaginator|CursorPaginator|Paginator|Collection
-    {
-        $queryBuilder = $this->applyLaraJSQuery($this->query(), $request->query(), $allows);
-        // The pagination.page === -1 LaraJSQuery will get all records
-        if ($request->input('pagination.page') === '-1') {
-            // ...
-            return $queryBuilder->take($limit)->get();
-        }
+    public function findAll(QueryParserAllowDTO $allow): LengthAwarePaginator|CursorPaginator|Paginator|Collection;
 
-        return match ($request->input('pagination.type')) {
-            'simple' => $queryBuilder->simplePaginate($limit, pageName: 'pagination[page]'),
-            'cursor' => $queryBuilder->cursorPaginate($limit, cursorName: 'pagination[cursor]'),
-            default => $queryBuilder->paginate($limit, pageName: 'pagination[page]'),
-        };
-    }
+    public function find(int $id, QueryParserAllowDTO $allow);
 
-    public function find(int $id, ?Request $request = null)
-    {
-        ...
-    }
+    public function findOrFail(int $id, QueryParserAllowDTO $allow);
 
-    public function findOrFail(int $id, ?Request $request = null)
-    {
-        ...
-    }
-
-    public function query(): Builder
-    {
-        ...
-    }
+    public function query(): Builder;
 }
 
 ```
@@ -251,20 +229,11 @@ class WriteRepository implements WriteRepositoryInterface
 {
     public function __construct(protected readonly Model $model) {}
 
-    public function create(array $data)
-    {
-        ...
-    }
+    public function create(array $data);
 
-    public function update(int $id, array $data)
-    {
-        ...
-    }
+    public function update(int $id, array $data);
 
-    public function delete(int $id): bool
-    {
-        ...
-    }
+    public function delete(int $id): bool;
 }
 
 ```

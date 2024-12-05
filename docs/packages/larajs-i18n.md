@@ -1,8 +1,8 @@
-## 🌟 Introduction
+## Introduction
 
 [This package](https://github.com/maingocthanhtan96/larajs-i18n) allows converting language files from `.php` to `.json` to support frontend.
 
-## ⚡ Quick Start
+## Quick Start
 
 **Install**
 

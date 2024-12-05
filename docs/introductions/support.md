@@ -1,4 +1,4 @@
-# ☎️ Support & Bug Reports ​
+# Support & Bug Reports ​
 
 **If you need access to the private repository, please contact me.**
 

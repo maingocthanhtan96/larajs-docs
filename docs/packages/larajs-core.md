@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-## 🛠️ Introduction
+## Introduction
 
 The `LaraJS Core` package provides essential tools and utilities to streamline `LaraJS` application development. It offers middleware, API setup, user signature management, and a collection of useful helpers to make your development process more efficient.
 
-## ⚡ Quick Start
+## Quick Start
 
 **Install the package**
 
@@ -22,7 +22,7 @@ Quickly set up `LaraJS` with the `larajs:setup` command:
 php artisan larajs:setup
 ```
 
-## 📂 Base Controller
+## Base Controller
 
 The `BaseLaraJSController` provides essential methods to handle API responses efficiently. This makes it easier to standardize responses across your application. Here are some key methods:
 
@@ -64,7 +64,7 @@ class BaseLaraJSController
 }
 ```
 
-## 🔄 Middleware & API
+## Middleware & API
 
 ### Language Middleware
 
@@ -131,9 +131,9 @@ Route::group([ 'prefix' => 'api/v1', 'middleware' => ['api']],
 
 ```
 
-## 🔄 Traits
+## Traits
 
-### 👤 User Signature
+### User Signature
 
 Automatically track the `created_by` and `updated_by` fields on your models with the `UserSignature` trait, ensuring that user information is logged with every change to the database.
 
@@ -151,7 +151,7 @@ trait UserSignature
 }
 ```
 
-### 🚀 Action
+### Action
 
 The `Action` trait provides a streamlined way to create and execute action classes in your Laravel application.
 
@@ -216,7 +216,7 @@ class UpdateAvatarAction
 }
 ```
 
-## ⚙️ Helpers
+## Helpers
 
 The package provides several utility functions to simplify common tasks:
 

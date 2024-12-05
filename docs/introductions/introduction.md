@@ -8,15 +8,15 @@ outline: deep
 
 ![LaraJS Introduction](../assets/larajs-intro.jpg)
 
-## 🚀 LaraJS
+## LaraJS
 
 `LaraJS` is a **low-code**, beautifully designed dashboard that combines Laravel and VueJS. It comes with a code generator that can save you about **40-70% of the time** for the entire project development process.
 
 ![LaraJS Introduction](../assets/generator.gif)
 
-## 🔑 Key Features
+## Key Features
 
-### ⚙️ Generate code
+### Generate code
 
 - 🌐 API
   - 🛤️ Route: Define API endpoints.
@@ -36,13 +36,13 @@ outline: deep
 - ✅ Integration Tests
 - 🎨 UI & Logic
 
-### 🛠️ Customization
+### Customization
 
 - ✏️ Easily customize generated code to fit your needs.
 - 🎨 Custom Themes for a tailored design and branding.
 - 🔄 Modify Stubs to control generated code structure.
 
-### 🧩 Additional Features
+### Additional Features
 
 - 🔍 Client-Side Querying
 - 🌗 Light/Dark Mode support
