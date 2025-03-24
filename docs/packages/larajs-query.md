@@ -100,11 +100,12 @@ Perform searches across attributes using the `search` query string parameter,. T
 
 Include related models with the `include` query string parameter:
 
-| **Operation**                                  | **Example**                                                                     |
-| ---------------------------------------------- | ------------------------------------------------------------------------------- |
-| An Attribute                                   | `?include[]=roles`                                                              |
-| Multiple Attributes                            | `?include[]=roles&include[]=roles.permissions`                                  |
-| Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists` |
+| **Operation**                                  | **Example**                                                                                          |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| An Attribute                                   | `?include[]=roles`                                                                                   |
+| Multiple Attributes                            | `?include[]=roles&include[]=roles.permissions`                                                       |
+| Nested Relationship                            | `?include[]=roles:id,name&include[]=roles.permissions&include[]=roles.permissions.users:id,username` |
+| Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists`                      |
 
 ## Selecting Fields
 
