@@ -36,29 +36,30 @@ Easily filter resources by attributes using the `filter` query string parameter.
 ?filter=expression
 ```
 
-| **Operation**                   | **Function**             | **Example**                                                       |
-| ------------------------------- | ------------------------ | ----------------------------------------------------------------- |
-| Equality                        | `equals`                 | `?filter=equals(name,'Smith')`                                    |
-| Equality relationship           | `equalsRelation`         | `?filter=equalsRelation(articles, name,'Smith')`                  |
-| Less than                       | `lessThan`               | `?filter=lessThan(age,'25')`                                      |
-| Less than relationship          | `lessThanRelation`       | `?filter=lessThanRelation(articles,age,'25')`                     |
-| Less than or equal              | `lessOrEqual`            | `?filter=lessOrEqual(lastModified,'2001-01-01')`                  |
-| Less than or equal relationship | `lessOrEqualRelation`    | `?filter=lessOrEqualRelation(articles,lastModified,'2001-01-01')` |
-| Greater than                    | `greaterThan`            | `?filter=greaterThan(duration,'6:12:14')`                         |
-| Greater than relationship       | `greaterThanRelation`    | `?filter=greaterThanRelation(articles,duration,'6:12:14')`        |
-| Greater or equal                | `greaterOrEqual`         | `?filter=greaterOrEqual(percentage,'33.33')`                      |
-| Greater or equal relationship   | `greaterOrEqualRelation` | `?filter=greaterOrEqualRelation(articles,percentage,'33.33')`     |
-| Contains                        | `contains`               | `?filter=contains(description,'cooking')`                         |
-| Contains relationship           | `containsRelation`       | `?filter=containsRelation(articles,description,'cooking')`        |
-| Starts with                     | `startsWith`             | `?filter=startsWith(description,'The')`                           |
-| Starts with relationship        | `startsWithRelation`     | `?filter=startsWithRelation(articles,description,'The')`          |
-| Ends with                       | `endsWith`               | `?filter=endsWith(description,'End')`                             |
-| Ends with Relationship          | `endsWithRelation`       | `?filter=endsWithRelation(articles,description,'End')`            |
-| Equals one value from set       | `any`                    | `?filter=any(chapter,'Intro','Summary','Conclusion')`             |
-| Negation                        | `not`                    | `?filter=not(equals(lastName,null))`                              |
-| Existence of a relationship     | `has`                    | `?filter=has(articles,'2')`                                       |
-| Conditional logical OR          | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                   |
-| Conditional logical AND         | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                  |
+| **Operation**                          | **Function**             | **Example**                                                        |
+| -------------------------------------- | ------------------------ | ------------------------------------------------------------------ |
+| Equality                               | `equals`                 | `?filter=equals(name,'Smith')`                                     |
+| Equality relationship                  | `equalsRelation`         | `?filter=equalsRelation(articles, name,'Smith')`                   |
+| Less than                              | `lessThan`               | `?filter=lessThan(age,'25')`                                       |
+| Less than relationship                 | `lessThanRelation`       | `?filter=lessThanRelation(articles,age,'25')`                      |
+| Less than or equal                     | `lessOrEqual`            | `?filter=lessOrEqual(lastModified,'2001-01-01')`                   |
+| Less than or equal relationship        | `lessOrEqualRelation`    | `?filter=lessOrEqualRelation(articles,lastModified,'2001-01-01')`  |
+| Greater than                           | `greaterThan`            | `?filter=greaterThan(duration,'6:12:14')`                          |
+| Greater than relationship              | `greaterThanRelation`    | `?filter=greaterThanRelation(articles,duration,'6:12:14')`         |
+| Greater or equal                       | `greaterOrEqual`         | `?filter=greaterOrEqual(percentage,'33.33')`                       |
+| Greater or equal relationship          | `greaterOrEqualRelation` | `?filter=greaterOrEqualRelation(articles,percentage,'33.33')`      |
+| Contains                               | `contains`               | `?filter=contains(description,'cooking')`                          |
+| Contains relationship                  | `containsRelation`       | `?filter=containsRelation(articles,description,'cooking')`         |
+| Starts with                            | `startsWith`             | `?filter=startsWith(description,'The')`                            |
+| Starts with relationship               | `startsWithRelation`     | `?filter=startsWithRelation(articles,description,'The')`           |
+| Ends with                              | `endsWith`               | `?filter=endsWith(description,'End')`                              |
+| Ends with Relationship                 | `endsWithRelation`       | `?filter=endsWithRelation(articles,description,'End')`             |
+| Equals one value from set              | `any`                    | `?filter=any(chapter,'Intro','Summary','Conclusion')`              |
+| Equals relationship one value from set | `anyRelation`            | `?filter=anyRelation(chapter,name,'Intro','Summary','Conclusion')` |
+| Negation                               | `not`                    | `?filter=not(equals(lastName,null))`                               |
+| Existence of a relationship            | `has`                    | `?filter=has(articles,'2')`                                        |
+| Conditional logical OR                 | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                    |
+| Conditional logical AND                | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                   |
 
 ## Sorting
 
