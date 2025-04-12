@@ -2,37 +2,59 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "LaraJS Docs",
-  description: "LaraJS is an optimization & management platform providing essential tools and features for Laravel and Vue.js projects",
+  title: "LaraJS - Laravel & Vue.js Development Platform",
+  description: "LaraJS is a powerful optimization & management platform providing essential tools, query builders, generators and features for Laravel and Vue.js projects",
   lang: 'en-US',
   lastUpdated: true,
+  sitemap: {
+    hostname: 'https://docs.larajs.com/',
+  },
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
-    ['link', { rel: 'canonical', href: 'https://maingocthanhtan96.github.io/larajs-docs/' }],
+    ['link', { rel: 'canonical', href: 'https://docs.larajs.com/' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['meta', { name: 'keywords', content: 'LaraJS, Laravel, Vue.js, optimization, development tools' }],
+    ['meta', { name: 'keywords', content: 'LaraJS, Laravel, Vue.js, optimization, development tools, query builder, LaraJS Query, Laravel query builder, Laravel eloquent, Vue.js development, Laravel development' }],
     ['meta', { name: 'author', content: 'Mai Ngoc Thanh Tan' }],
-    ['meta', { property: 'og:title', content: 'LaraJS Documentation' }],
-    ['meta', { property: 'og:description', content: 'Documentation for LaraJS - A Laravel and Vue.js development platform' }],
-    ['meta', { property: 'og:url', content: 'https://maingocthanhtan96.github.io/larajs-docs/' }],
-    ['meta', { property: 'og:image', content: '/logo.png' }],
+    ['meta', { property: 'og:title', content: 'LaraJS - Laravel & Vue.js Development Platform' }],
+    ['meta', { property: 'og:description', content: 'Documentation for LaraJS - A powerful Laravel and Vue.js development platform with advanced query capabilities and generators' }],
+    ['meta', { property: 'og:url', content: 'https://docs.larajs.com/' }],
+    ['meta', { property: 'og:image', content: 'https://docs.larajs.com/larajs.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: 'LaraJS Documentation' }],
-    ['meta', { name: 'twitter:description', content: 'LaraJS - Laravel and Vue.js development platform' }],
-    ['meta', { name: 'twitter:image', content: '/logo.png' }],
+    ['meta', { name: 'twitter:description', content: 'LaraJS - A powerful Laravel and Vue.js development platform with advanced query builders' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.larajs.com/larajs.png' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://maingocthanhtan96.github.io/larajs-docs/",
+      "url": "https://docs.larajs.com/",
       "name": "LaraJS Documentation",
-      "description": "LaraJS - A Laravel and Vue.js development platform",
+      "description": "LaraJS - A powerful Laravel and Vue.js development platform with query builders and generators",
       "author": {
         "@type": "Person",
         "name": "Mai Ngoc Thanh Tan"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LaraJS",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://docs.larajs.com/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "LaraJS",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
       }
     })],
   ],
@@ -58,6 +80,10 @@ export default defineConfig({
           {
             text: "What is LaraJS",
             link: "/introductions/introduction",
+          },
+          {
+            text: "Why Choose LaraJS",
+            link: "/introductions/benefit",
           },
           {
             text: "Installation",
@@ -111,10 +137,10 @@ export default defineConfig({
             text: "LaraJS Generator",
             link: "/packages/larajs-generator",
           },
-          // {
-          //   text: "LaraJS CQRS",
-          //   link: "/packages/larajs-cqrs",
-          // },
+          {
+            text: "LaraJS CQRS",
+            link: "/packages/larajs-cqrs",
+          },
           {
             text: "LaraJS Permission",
             link: "/packages/larajs-permission",
