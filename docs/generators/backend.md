@@ -1,3 +1,47 @@
+---
+outline: deep
+title: "LaraJS Backend API Generator - Complete Laravel API Architecture"
+description: "Learn how LaraJS generates structured API code with controllers, services, repositories, resources, and tests for Laravel applications"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS backend generator, Laravel API structure, Laravel controllers, Laravel services, Laravel repositories, API documentation, Laravel form requests, Eloquent resources, PEST testing, Laravel migrations
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Backend API Generator - Complete Laravel API Architecture"
+  - - meta
+    - property: og:description
+      content: "Learn how LaraJS generates structured API code with controllers, services, repositories, resources, and tests for Laravel applications"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/generators/backend.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Backend API Generator - Complete Laravel API Architecture"
+  - - meta
+    - name: twitter:description
+      content: "Learn how LaraJS generates structured API code with controllers, services, repositories, resources, and tests"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/generators/backend.html
+---
+
 # API Structure (Monorepo)
 
 We generate the API according to the following structure

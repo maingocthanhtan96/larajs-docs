@@ -1,5 +1,45 @@
 ---
 outline: deep
+title: "Getting Started with LaraJS Generators - Automate Laravel & Vue.js Development"
+description: "Learn how to use LaraJS generators to rapidly create backend APIs, frontend components, and full-stack features for Laravel and Vue.js applications"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS generators, Laravel code generation, Vue.js scaffolding, API generation, backend generators, frontend generators, code automation, LaraJS setup, rapid development, CRUD generation
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "Getting Started with LaraJS Generators - Automate Laravel & Vue.js Development"
+  - - meta
+    - property: og:description
+      content: "Learn how to use LaraJS generators to rapidly create backend APIs, frontend components, and full-stack features"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/generators/getting-started.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "Getting Started with LaraJS Generators - Automate Laravel & Vue.js Development"
+  - - meta
+    - name: twitter:description
+      content: "Learn how to use LaraJS generators to rapidly create backend APIs, frontend components, and full-stack features"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/generators/getting-started.html
 ---
 
 # Generator Overview

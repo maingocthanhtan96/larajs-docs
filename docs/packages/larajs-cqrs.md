@@ -1,3 +1,49 @@
+---
+outline: deep
+title: "LaraJS CQRS - Command Query Responsibility Segregation for Laravel"
+description: "Implement CQRS architecture in Laravel applications with LaraJS CQRS package to separate command and query operations for improved scalability and maintainability"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS CQRS, Laravel command bus, Laravel query bus, Command Query Responsibility Segregation, Laravel architecture, command handlers, query handlers, Laravel middleware, Laravel scalability
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS CQRS - Command Query Responsibility Segregation for Laravel"
+  - - meta
+    - property: og:description
+      content: "Implement CQRS architecture in Laravel applications with LaraJS CQRS package to separate command and query operations"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/packages/larajs-cqrs.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary
+  - - meta
+    - name: twitter:title
+      content: "LaraJS CQRS - Command Query Responsibility Segregation for Laravel"
+  - - meta
+    - name: twitter:description
+      content: "Implement CQRS architecture in Laravel applications with LaraJS CQRS package to separate command and query operations"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/packages/larajs-cqrs.html
+---
+
+# LaraJS CQRS
+
 ## Introduction
 
 This package allows the creation and management of multiple command buses, providing a flexible system for handling various commands in your Laravel application. It supports CQRS (Command Query Responsibility Segregation), which separates command and query handling to improve scalability, efficiency, and maintainability.

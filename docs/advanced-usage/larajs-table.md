@@ -1,12 +1,58 @@
+---
+outline: deep
+title: "LaraJS Table - Dynamic Data Tables for Vue.js & Laravel"
+description: "Build powerful interactive data tables with sorting, filtering, pagination and advanced display options for Laravel & Vue.js applications"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS Table, Vue.js data tables, Laravel tables, dynamic tables, data grid, pagination, sorting, filtering, data presentation, CRUD tables
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Table - Dynamic Data Tables for Vue.js & Laravel"
+  - - meta
+    - property: og:description
+      content: "Build powerful interactive data tables with sorting, filtering, pagination and advanced display options"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/advanced-usage/larajs-table.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Table - Dynamic Data Tables for Vue.js & Laravel"
+  - - meta
+    - name: twitter:description
+      content: "Build powerful interactive data tables with sorting, filtering, pagination and advanced display options"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/advanced-usage/larajs-table.html
+---
+
+# LaraJS Table
+
 ## 🌟 Introduction
 
 We use [Element Plus Table](https://element-plus.org/en-US/component/table.html#table) and `JSX` to create the dynamic `LaraTable` component. This setup allows for easy customization and robust table functionality with dynamic queries and actions.
 
 ```vue
 <script setup lang="ts">
-import {useCategoryTables} from "./table.tsx";
+import { useCategoryTables } from "./table.tsx";
 
-const {table} = useCategoryTables();
+const { table } = useCategoryTables();
 </script>
 
 <template>

@@ -1,3 +1,47 @@
+---
+outline: deep
+title: "LaraJS Frontend Generator - Vue.js CMS Components & Router Setup"
+description: "Learn how LaraJS generates structured Vue.js frontend code with form components, data tables, API integration, and routing for your CMS"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS frontend generator, Vue.js CMS, frontend architecture, Vue components, router setup, form generation, table components, API integration, Vue hooks, LaraJS monorepo, LaraForm, LaraTable
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Frontend Generator - Vue.js CMS Components & Router Setup"
+  - - meta
+    - property: og:description
+      content: "Learn how LaraJS generates structured Vue.js frontend code with form components, data tables, API integration, and routing for your CMS"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/generators/frontend.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Frontend Generator - Vue.js CMS Components & Router Setup"
+  - - meta
+    - name: twitter:description
+      content: "Learn how LaraJS generates structured Vue.js frontend code with form components, data tables, API integration, and routing for your CMS"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/generators/frontend.html
+---
+
 # CMS Structure (Monorepo)
 
 We generate the CMS according to the following structure

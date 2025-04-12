@@ -1,14 +1,56 @@
 ---
 outline: deep
+title: "LaraJS Query - Dynamic API Query Builder for Laravel"
+description: "LaraJS Query simplifies Eloquent models filtering, sorting, and including relationships with a flexible interface for client-side querying in Laravel applications"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS Query, Laravel query builder, Laravel filtering, API query builder, Laravel sorting, Laravel relationships, Eloquent query builder, Laravel pagination, dynamic filtering, Laravel API, Eloquent models, Laravel repository pattern
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: LaraJS Query - Dynamic API Query Builder for Laravel
+  - - meta
+    - name: twitter:description
+      content: Build powerful and flexible Laravel Eloquent queries with LaraJS Query for dynamic filtering, sorting, and relationship handling
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:title
+      content: LaraJS Query - Dynamic API Query Builder for Laravel
+  - - meta
+    - property: og:description
+      content: Build powerful and flexible Laravel Eloquent queries with LaraJS Query for dynamic filtering, sorting, and relationship handling
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/packages/larajs-query.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/packages/larajs-query.html
 ---
+
+# LaraJS Query
 
 ## Introduction
 
-This package simplifies querying Eloquent models by dynamically filtering, sorting, and including relationships based on incoming requests. It provides a flexible interface for client-side queries and streamlines the process of querying and retrieving resources.
+LaraJS Query is a powerful package that simplifies querying Eloquent models by dynamically filtering, sorting, and including relationships based on incoming requests. It provides a flexible interface for client-side queries and streamlines the process of retrieving resources in your Laravel applications.
 
 ## Quick Start
 
-Here’s how to integrate the package with your Laravel controllers:
+Here's how to integrate the package with your Laravel controllers:
 
 ```php
 <?php
@@ -36,30 +78,30 @@ Easily filter resources by attributes using the `filter` query string parameter.
 ?filter=expression
 ```
 
-| **Operation**                          | **Function**             | **Example**                                                        |
-| -------------------------------------- | ------------------------ | ------------------------------------------------------------------ |
-| Equality                               | `equals`                 | `?filter=equals(name,'Smith')`                                     |
-| Equality relationship                  | `equalsRelation`         | `?filter=equalsRelation(articles, name,'Smith')`                   |
-| Less than                              | `lessThan`               | `?filter=lessThan(age,'25')`                                       |
-| Less than relationship                 | `lessThanRelation`       | `?filter=lessThanRelation(articles,age,'25')`                      |
-| Less than or equal                     | `lessOrEqual`            | `?filter=lessOrEqual(lastModified,'2001-01-01')`                   |
-| Less than or equal relationship        | `lessOrEqualRelation`    | `?filter=lessOrEqualRelation(articles,lastModified,'2001-01-01')`  |
-| Greater than                           | `greaterThan`            | `?filter=greaterThan(duration,'6:12:14')`                          |
-| Greater than relationship              | `greaterThanRelation`    | `?filter=greaterThanRelation(articles,duration,'6:12:14')`         |
-| Greater or equal                       | `greaterOrEqual`         | `?filter=greaterOrEqual(percentage,'33.33')`                       |
-| Greater or equal relationship          | `greaterOrEqualRelation` | `?filter=greaterOrEqualRelation(articles,percentage,'33.33')`      |
-| Contains                               | `contains`               | `?filter=contains(description,'cooking')`                          |
-| Contains relationship                  | `containsRelation`       | `?filter=containsRelation(articles,description,'cooking')`         |
-| Starts with                            | `startsWith`             | `?filter=startsWith(description,'The')`                            |
-| Starts with relationship               | `startsWithRelation`     | `?filter=startsWithRelation(articles,description,'The')`           |
-| Ends with                              | `endsWith`               | `?filter=endsWith(description,'End')`                              |
-| Ends with Relationship                 | `endsWithRelation`       | `?filter=endsWithRelation(articles,description,'End')`             |
-| Equals one value from set              | `any`                    | `?filter=any(chapter,'Intro','Summary','Conclusion')`              |
-| Equals relationship one value from set | `anyRelation`            | `?filter=anyRelation(chapter,name,'Intro','Summary','Conclusion')` |
-| Negation                               | `not`                    | `?filter=not(equals(lastName,null))`                               |
-| Existence of a relationship            | `has`                    | `?filter=has(articles,'2')`                                        |
-| Conditional logical OR                 | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                    |
-| Conditional logical AND                | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                   |
+| **Operation**                          | **Function**             | **Example**                                                       |
+| -------------------------------------- | ------------------------ | ----------------------------------------------------------------- |
+| Equality                               | `equals`                 | `?filter=equals(name,'Smith')`                                    |
+| Equality relationship                  | `equalsRelation`         | `?filter=equalsRelation(articles, name,'Smith')`                  |
+| Less than                              | `lessThan`               | `?filter=lessThan(age,'25')`                                      |
+| Less than relationship                 | `lessThanRelation`       | `?filter=lessThanRelation(articles,age,'25')`                     |
+| Less than or equal                     | `lessOrEqual`            | `?filter=lessOrEqual(lastModified,'2001-01-01')`                  |
+| Less than or equal relationship        | `lessOrEqualRelation`    | `?filter=lessOrEqualRelation(articles,lastModified,'2001-01-01')` |
+| Greater than                           | `greaterThan`            | `?filter=greaterThan(duration,'6:12:14')`                         |
+| Greater than relationship              | `greaterThanRelation`    | `?filter=greaterThanRelation(articles,duration,'6:12:14')`        |
+| Greater or equal                       | `greaterOrEqual`         | `?filter=greaterOrEqual(percentage,'33.33')`                      |
+| Greater or equal relationship          | `greaterOrEqualRelation` | `?filter=greaterOrEqualRelation(articles,percentage,'33.33')`     |
+| Contains                               | `contains`               | `?filter=contains(description,'cooking')`                         |
+| Contains relationship                  | `containsRelation`       | `?filter=containsRelation(articles,description,'cooking')`        |
+| Starts with                            | `startsWith`             | `?filter=startsWith(description,'The')`                           |
+| Starts with relationship               | `startsWithRelation`     | `?filter=startsWithRelation(articles,description,'The')`          |
+| Ends with                              | `endsWith`               | `?filter=endsWith(description,'End')`                             |
+| Ends with Relationship                 | `endsWithRelation`       | `?filter=endsWithRelation(articles,description,'End')`            |
+| Equals one value from set              | `any`                    | `?filter=any(chapter,'Intro','Summary','Conclusion')`             |
+| Equals relationship one value from set | `anyRelation`            | `?filter=anyRelation(chapter,name,'Intro','Summary')`             |
+| Negation                               | `not`                    | `?filter=not(equals(lastName,null))`                              |
+| Existence of a relationship            | `has`                    | `?filter=has(articles,'2')`                                       |
+| Conditional logical OR                 | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                   |
+| Conditional logical AND                | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                  |
 
 ## Sorting
 

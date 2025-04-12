@@ -1,5 +1,45 @@
 ---
 outline: deep
+title: "LaraJS Core - Essential Utilities for Laravel Application Development"
+description: "Discover LaraJS Core package with essential middleware, API helpers, user signature tracking, and utility functions to streamline Laravel development"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS Core, Laravel middleware, API responses, user signature tracking, Laravel helpers, action pattern, file management, base controller, Laravel utilities, storage helpers
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Core - Essential Utilities for Laravel Application Development"
+  - - meta
+    - property: og:description
+      content: "Discover LaraJS Core package with essential middleware, API helpers, user signature tracking, and utility functions"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/packages/larajs-core.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Core - Essential Utilities for Laravel Application Development"
+  - - meta
+    - name: twitter:description
+      content: "Discover LaraJS Core package with essential middleware, API helpers, user signature tracking, and utility functions"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/packages/larajs-core.html
 ---
 
 ## Introduction

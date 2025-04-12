@@ -1,3 +1,51 @@
+---
+outline: deep
+title: "LaraJS Installation Guide - Setup Your Development Environment"
+description: "Step-by-step instructions for installing and configuring LaraJS, the Laravel & Vue.js low-code platform for rapid application development"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS installation, setup LaraJS, Laravel Vue setup, low-code platform installation, LaraJS configuration, Laravel development environment, Vue.js setup, web application setup
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: LaraJS Installation Guide - Setup Your Development Environment
+  - - meta
+    - property: og:description
+      content: Step-by-step instructions for installing and configuring LaraJS, the Laravel & Vue.js low-code platform for rapid application development
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/introductions/installation.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: LaraJS Installation Guide - Setup Your Development Environment
+  - - meta
+    - name: twitter:description
+      content: Step-by-step instructions for installing and configuring LaraJS, the Laravel & Vue.js low-code platform
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/introductions/installation.html
+---
+
+# Installation Guide
+
+This guide walks you through setting up LaraJS on your development machine.
+
 ## Requirements
 
 Before installing LaraJS, ensure that your environment meets the following requirements:

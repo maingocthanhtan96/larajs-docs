@@ -1,5 +1,45 @@
 ---
 outline: deep
+title: "LaraJS Permission - Role-Based Access Control for Laravel & Vue.js"
+description: "Implement robust role-based access control in Laravel and Vue.js applications with LaraJS Permission's intuitive API and ready-to-use components"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS Permission, Laravel RBAC, Vue.js permissions, role-based access control, user roles, access management, Laravel authorization, Vue.js authorization
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Permission - Role-Based Access Control for Laravel & Vue.js"
+  - - meta
+    - property: og:description
+      content: "Implement robust role-based access control in Laravel and Vue.js applications with LaraJS Permission"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/packages/larajs-permission.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Permission - Role-Based Access Control for Laravel & Vue.js"
+  - - meta
+    - name: twitter:description
+      content: "Implement robust role-based access control in Laravel and Vue.js applications"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/packages/larajs-permission.html
 ---
 
 ## Introduction
@@ -30,7 +70,7 @@ class User extends Authenticatable
   use HasRoles;
   // ...
 }
-``` 
+```
 
 3. Defining a Super-Admin in the `AuthServiceProvider.php` file
 
@@ -50,6 +90,7 @@ class AuthServiceProvider extends ServiceProvider
   }
 }
 ```
+
 4. Set up a user, role, and permission seeder in the `SetupUserRolePermissionSeeder.php` file
 
 ```php
@@ -116,17 +157,20 @@ To include the Role Permission UI in your CMS, import the component into the adm
 
 ```ts
 const administrator: RouterMapping = {
-  path: '/administrators',
-  name: 'administrators',
+  path: "/administrators",
+  name: "administrators",
   // ...
   children: [
     {
-      path: 'roles',
-      name: 'Role',
-      component: () => import('@larajs/permission/src/views/role-permission/RolePermission.vue'),
+      path: "roles",
+      name: "Role",
+      component: () =>
+        import(
+          "@larajs/permission/src/views/role-permission/RolePermission.vue"
+        ),
       meta: {
-        title: 'role_permission',
-        icon: 'role',
+        title: "role_permission",
+        icon: "role",
         permissions: [PermissionType.MANAGE],
       },
     },
@@ -134,6 +178,7 @@ const administrator: RouterMapping = {
   ],
 };
 ```
+
 **UI**
 
 ![LaraJS Permission](../assets/larajs-permission.png)

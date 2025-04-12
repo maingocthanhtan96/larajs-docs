@@ -1,12 +1,58 @@
+---
+outline: deep
+title: "LaraJS Form - Advanced Form Builder for Vue.js & Laravel"
+description: "Create dynamic, validated forms quickly with LaraJS Form's intuitive API and pre-built components for Vue.js and Laravel applications"
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: keywords
+      content: LaraJS Form, Vue.js form builder, Laravel form components, dynamic forms, form validation, form fields, form UI, form rendering, frontend forms
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "LaraJS Form - Advanced Form Builder for Vue.js & Laravel"
+  - - meta
+    - property: og:description
+      content: "Create dynamic, validated forms quickly with LaraJS Form's intuitive API and pre-built components"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/advanced-usage/larajs-form.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.png
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - name: twitter:card
+      content: summary_large_image
+  - - meta
+    - name: twitter:title
+      content: "LaraJS Form - Advanced Form Builder for Vue.js & Laravel"
+  - - meta
+    - name: twitter:description
+      content: "Create dynamic, validated forms quickly with LaraJS Form's intuitive API and pre-built components"
+  - - meta
+    - name: twitter:image
+      content: https://docs.larajs.com/larajs.png
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/advanced-usage/larajs-form.html
+---
+
+# LaraJS Form
+
 ## 🌟 Introduction
 
 We utilize [Element Plus Form](https://element-plus.org/en-US/component/form.html#form) and `JSX` to create the dynamic `LaraForm` component. This allows for seamless form handling with responsive UI elements.
 
 ```vue
 <script setup lang="ts">
-import {useCategoryForms} from "./form.tsx";
+import { useCategoryForms } from "./form.tsx";
 
-const {id, form, state, formElement} = useCategoryForms();
+const { id, form, state, formElement } = useCategoryForms();
 </script>
 
 <template>
