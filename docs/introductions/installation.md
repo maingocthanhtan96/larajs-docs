@@ -52,7 +52,7 @@ Before installing LaraJS, ensure that your environment meets the following requi
 
 - 🐘 PHP 8.3+
 - 🎼 Composer
-- 🟢 Node.js (version 20.x+)
+- 🟢 Node.js (version 22.x+)
 - 🧶 Yarn
 
 ## Browser Support
