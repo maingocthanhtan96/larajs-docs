@@ -207,3 +207,125 @@ return new class extends Migration
 };
 
 ```
+
+## DBML <Badge type="warning" text="beta" />
+
+### The DBML Interface
+
+LaraJS provides a clean, user-friendly interface for importing DBML content:
+
+![DBML Interface](../assets/generators/dbml.png)
+
+The interface provides:
+
+- A large text area for pasting DBML content
+- A reference example to help users understand the syntax
+- A link to the official DBML documentation
+- A parse button to process the DBML and generate model fields
+
+### Complete Type Mapping Reference
+
+The LaraJS DBML parser supports a comprehensive range of database types, mapping them automatically to their corresponding LaraJS database types:
+
+| **DBML Type**                             | **LaraJS Database Type** |
+| ----------------------------------------- | ------------------------ |
+| `int`, `integer`                          | `INTEGER`                |
+| `tinyint`                                 | `TINYINT`                |
+| `smallint`                                | `SMALLINT`               |
+| `mediumint`                               | `MEDIUMINT`              |
+| `bigint`                                  | `BIGINT`                 |
+| `float`                                   | `FLOAT`                  |
+| `double`                                  | `DOUBLE`                 |
+| `decimal`                                 | `DECIMAL`                |
+| `boolean`, `bool`                         | `BOOLEAN`                |
+| `date`                                    | `DATE`                   |
+| `datetime`                                | `DATETIME`               |
+| `timestamp`                               | `TIMESTAMP`              |
+| `time`                                    | `TIME`                   |
+| `year`                                    | `YEAR`                   |
+| `char`                                    | `CHAR`                   |
+| `varchar`, `string`                       | `VARCHAR`                |
+| `text`                                    | `TEXT`                   |
+| `tinytext`                                | `TINYTEXT`               |
+| `mediumtext`                              | `MEDIUMTEXT`             |
+| `longtext`                                | `LONGTEXT`               |
+| `json`                                    | `JSON`                   |
+| `jsonb`                                   | `JSONB`                  |
+| `enum`                                    | `ENUM`                   |
+| `unsigned int`, `unsignedint`             | `UNSIGNED INTEGER`       |
+| `unsigned integer`, `unsignedinteger`     | `UNSIGNED INTEGER`       |
+| `unsigned tinyint`, `unsignedtinyint`     | `UNSIGNED TINYINT`       |
+| `unsigned smallint`, `unsignedsmallint`   | `UNSIGNED SMALLINT`      |
+| `unsigned mediumint`, `unsignedmediumint` | `UNSIGNED MEDIUMINT`     |
+| `unsigned bigint` , `unsignedbigint`      | `UNSIGNED BIGINT`        |
+
+**Example DBML Syntax:**
+
+```dbml
+Table users {
+  id integer [pk]
+  user_info_id bigint [ref: - user_infos.id]
+  username varchar(50) [unique, not null]
+  email varchar [unique, not null]
+  password varchar [not null]
+  profile_image varchar
+  bio text
+  role enum('admin', 'user', 'editor') [default: 'user']
+  is_active boolean [default: true]
+  created_at timestamp
+  updated_at timestamp
+}
+```
+
+### Field Attributes and Their Mappings
+
+The DBML parser also handles various field attributes and maps them to appropriate LaraJS configurations:
+
+| **DBML Attribute**    | **LaraJS Equivalent**                            |
+| --------------------- | ------------------------------------------------ |
+| `pk`                  | Identifies the primary key field                 |
+| `not null`            | Sets default value to "None" instead of "NULL"   |
+| `unique`              | Enables the "Unique" field option                |
+| `index`               | Enables the "Index" field option                 |
+| `note: 'text'`        | Sets a comment in the field options              |
+| `comment: 'text'`     | Sets a comment in the field options              |
+| `default: value`      | Sets default value to "As define" with the value |
+| `ref: > table.column` | Creates a "hasMany" relationship to the table    |
+| `ref: < table.column` | Creates a "hasOne" relationship with the table   |
+| `increment`           | Maps to autoincrement field type                 |
+
+### Relationship Detection
+
+The DBML parser can detect relationships from reference syntax:
+
+- `[ref: > users.id]` detects a hasMany relationship
+- `[ref: < comments.post_id]` detects a hasOne relationship
+
+### Best Practices for DBML Import
+
+For the best results when working with DBML in LaraJS:
+
+1. **Field Naming**: Use snake_case for field names in DBML to maintain consistency with Laravel conventions
+2. **Relationship Definition**: Explicitly define relationships using the `ref:` syntax to ensure proper relationship detection
+3. **Comprehensive Attributes**: Include all necessary attributes like unique constraints, defaults, and comments for complete model generation
+4. **Review After Import**: Always review the generated fields after import to ensure they meet your requirements
+5. **Incremental Approach**: For complex schemas, consider importing tables one at a time rather than all at once
+6. **DBML First Design**: Consider using DBML as your initial database design tool before implementation to streamline the development process
+
+### Handling Complex Data Types
+
+The DBML parser intelligently handles more complex data types:
+
+- **Enum Types**: When using `enum('value1', 'value2')`, LaraJS automatically creates an ENUM field with the provided values
+- **Length Specification**: For types like `varchar(255)`, the parser correctly sets the length_varchar property
+- **Decimal Precision**: For `decimal`, LaraJS sets up the appropriate decimal configuration
+
+### Troubleshooting Common Issues
+
+| **Issue**                      | **Solution**                                                  |
+| ------------------------------ | ------------------------------------------------------------- |
+| Relationships not detected     | Ensure you're using the proper `ref:` syntax with direction   |
+| Field types not mapping        | Check the type mapping table and use a supported DBML type    |
+| Default values not applying    | Use the format `[default: value]` with appropriate quotes     |
+| Unique constraints not applied | Make sure to include `[unique]` in the field attributes       |
+| Model name not generated       | Check the table name format - it should be `Table name {...}` |
