@@ -214,6 +214,7 @@ return new class extends Migration
 
 LaraJS provides a clean, user-friendly interface for importing DBML content:
 
+![DBML Modal](../assets/generators/dbml-modal.png)
 ![DBML Interface](../assets/generators/dbml.png)
 
 The interface provides:
