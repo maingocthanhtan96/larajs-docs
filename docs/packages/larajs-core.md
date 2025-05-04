@@ -256,6 +256,49 @@ class UpdateAvatarAction
 }
 ```
 
+## Commands
+
+### Create CURD actions
+
+```php
+php artisan larajs:make:action {name : The name of the action class} {--repository : Include a repository interface in the action class}
+```
+
+Tree:
+
+```tree
+app/Actions/Category
+├── CreateCategoryAction.php
+├── DeleteCategoryAction.php
+├── FindAllCategoryAction.php
+├── FindOneCategoryAction.php
+└── UpdateCategoryAction.php
+```
+
+Example: `php artisan larajs:make:action Category --repository`
+
+### Create CURD controller
+
+```php
+php artisan larajs:make:controller Category
+```
+
+### Create repositories
+
+```php
+php artisan larajs:make:repository Category
+```
+
+Tree:
+
+```tree
+app/Repositories/Category
+├── CategoryReadRepository.php
+├── CategoryReadRepositoryInterface.php
+├── CategoryWriteRepository.php
+└── CategoryWriteRepositoryInterface.php
+```
+
 ## Helpers
 
 The package provides several utility functions to simplify common tasks:
