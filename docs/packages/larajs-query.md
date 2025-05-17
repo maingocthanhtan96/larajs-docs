@@ -98,11 +98,13 @@ Easily filter resources by attributes using the `filter` query string parameter.
 | Ends with Relationship                 | `endsWithRelation`       | `?filter=endsWithRelation(articles,description,'End')`                    |
 | Equals one value from set              | `any`                    | `?filter=any(chapter,'Intro','Summary','Conclusion')`                     |
 | Equals relationship one value from set | `anyRelation`            | `?filter=anyRelation(chapter,name,'Intro','Summary')`                     |
+| Filter between                         | `between`                | `?filter=between(updated_at,'2025-01-01 00:00:00','2025-01-15 23:59:59')` |
+| Filter between relationship            | `betweenRelation`        | `?filter=betweenRelation(articles,price,'10','20')`                       |
+| Filter relation                        | `relation`               | `?filter=relation(users,and(equals(name,'Smith'),greaterThan(age,'25')))` |
 | Negation                               | `not`                    | `?filter=not(equals(lastName,null))`                                      |
 | Existence of a relationship            | `has`                    | `?filter=has(articles,'2')`                                               |
 | Conditional logical OR                 | `or`                     | `?filter=or(has(orders,'1'),has(invoices,'1'))`                           |
 | Conditional logical AND                | `and`                    | `?filter=and(has(orders,'1'),has(invoices,'1'))`                          |
-| Filter relation                        | `relation`               | `?filter=relation(users,and(equals(name,'Smith'),greaterThan(age,'25')))` |
 
 ## Sorting
 
@@ -164,11 +166,10 @@ Select specific fields using the select query string parameter:
 
 Filter resources by date attributes using the `date` query string parameter, which automatically applies a `whereBetween(attribute, [startOfDate, endOfDate])` query.
 
-| **Operation**        | **Example**                                                                                     |
-| -------------------- | ----------------------------------------------------------------------------------------------- |
-| Attribute (option 1) | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15`                  |
-| Attribute (option 2) | `?date[column]=updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15`            |
-| Multiple Attributes  | `?date[column]=created_at,updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15` |
+| **Operation**        | **Example**                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| Attribute (option 1) | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15`       |
+| Attribute (option 2) | `?date[column]=updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15` |
 
 ## Pagination
 
