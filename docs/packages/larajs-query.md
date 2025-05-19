@@ -164,12 +164,18 @@ Select specific fields using the select query string parameter:
 
 ## Date Filtering
 
-Filter resources by date attributes using the `date` query string parameter, which automatically applies a `whereBetween(attribute, [startOfDate, endOfDate])` query.
+Filter resources by date attributes using either the `date` query string parameter or the `filter` function.
 
-| **Operation**        | **Example**                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------ |
-| Attribute (option 1) | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15`       |
-| Attribute (option 2) | `?date[column]=updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15` |
+The `date` parameter automatically calculates the `startOfDay` and `endOfDay` values.
+
+Both methods apply a `whereBetween(attribute, [startDate, endDate])` query.
+
+| **Operation**        | **Example**                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------- |
+| Attribute (option 1) | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15`              |
+| Attribute (option 2) | `?date[column]=updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15`        |
+| Attribute (option 3) | `?filter=between(updated_at,'2025-01-01 00:00:00','2025-01-15 23:59:59')`                   |
+| Attribute (option 4) | `?filter=and(greaterOrEqual(start_date, '2025-01-01'),lessOrEqual(end_date, '2025-01-15'))` |
 
 ## Pagination
 
