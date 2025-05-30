@@ -82,6 +82,8 @@ return [
 
 **.env**
 
+Copy path from `where node`
+
 ```bash
 GENERATOR_NODE_PATH=/usr/local/bin/node
 ...

@@ -267,6 +267,8 @@ class ReadRepository implements ReadRepositoryInterface
     public function findOrFail(int $id, QueryParserAllowDTO $allow);
 
     public function query(): Builder;
+
+    public function laraJSQuery(QueryParserAllowDTO $allow, bool $clearFilter = false): Builder;
 }
 
 ```
