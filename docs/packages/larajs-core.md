@@ -50,8 +50,10 @@ The `LaraJS Core` package provides essential tools and utilities to streamline `
 
 **Install the package**
 
+[Github](https://github.com/maingocthanhtan96/larajs-core)
+
 ```bash
-composer require larajs/core:dev-main
+composer require larajs/core
 ```
 
 **Setup LaraJS**
@@ -118,8 +120,9 @@ class LangMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $cookie = $request->cookie('language', config('app.locale'));
-        App::setLocale($cookie);
+        $lang = $request->header('X-Accept-Language', config('app.locale'));
+
+        App::setLocale($lang);
 
         return $next($request);
     }
@@ -266,7 +269,7 @@ php artisan larajs:make:action {name : The name of the action class} {--reposito
 
 Tree:
 
-```tree
+```txt
 app/Actions/Category
 ├── CreateCategoryAction.php
 ├── DeleteCategoryAction.php
@@ -283,6 +286,11 @@ Example: `php artisan larajs:make:action Category --repository`
 php artisan larajs:make:controller Category
 ```
 
+```txt
+app/Http/Controller
+└── CategoryController.php
+```
+
 ### Create repositories
 
 ```php
@@ -291,7 +299,7 @@ php artisan larajs:make:repository Category
 
 Tree:
 
-```tree
+```txt
 app/Repositories/Category
 ├── CategoryReadRepository.php
 ├── CategoryReadRepositoryInterface.php

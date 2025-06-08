@@ -54,8 +54,10 @@ head:
 
 First, install the package as a development dependency using Composer:
 
+[Github](https://github.com/maingocthanhtan96/larajs-i18n)
+
 ```bash
-composer require --dev larajs/i18n:dev-main
+composer require --dev larajs/i18n
 ```
 
 **Generate JSON Language Files**

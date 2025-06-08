@@ -262,7 +262,7 @@ The LaraJS DBML parser supports a comprehensive range of database types, mapping
 
 **Example DBML Syntax:**
 
-```dbml
+```txt
 Table users {
   id integer [pk]
   user_info_id bigint [ref: - user_infos.id]
