@@ -71,8 +71,8 @@ export default defineConfig({
     },
     nav: [
       { text: "Home", link: "/" },
-      { text: "Getting Started", link: "/introductions/introduction" },
-      { text: "Documentation", link: "/generators/getting-started" },
+      { text: "Getting Started", link: "/generators/getting-started" },
+      { text: "Documentation", link: "/introductions/introduction" },
       { text: "Video Demo", link: "https://youtu.be/fJ3Inyi034k" },
     ],
     sidebar: [
