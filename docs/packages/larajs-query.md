@@ -187,8 +187,9 @@ Paginate resources with the `pagination` query string parameter:
 | `simple`      | `?pagination[type]=simple&pagination[limit]=25&pagination[page]=1`                            |
 | `cursor`      | `?pagination[type]=cursor&pagination[cursor]=eyJpZCI6MTUsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0` |
 
-## Allow Query
+## Allow Query (Recommend)
 
+We recommend using allow query as soon as possible to control which fields are available for querying.
 By default, all fields in a model are available for querying. However, you can configure the system to exclude certain fields as necessary by overriding the `allowQueryParsers` method in your models.
 
 ```php

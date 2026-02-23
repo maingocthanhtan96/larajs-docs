@@ -30,6 +30,8 @@ export default defineConfig({
     ['meta', { name: 'twitter:title', content: 'LaraJS Docs' }],
     ['meta', { name: 'twitter:description', content: 'LaraJS - A powerful Laravel and Vue.js development platform with advanced query builders' }],
     ['meta', { name: 'twitter:image', content: 'https://docs.larajs.com/larajs.png' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-ZZPDRPCYYV' }],
+    ['script', {}, "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-ZZPDRPCYYV');"],
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
