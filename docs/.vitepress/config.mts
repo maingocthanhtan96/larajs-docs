@@ -180,6 +180,52 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: "Agent Skills",
+        collapsed: false,
+        items: [
+          {
+            text: "Overview",
+            link: "/agent-skills/index",
+          },
+          {
+            text: "Generator Overview",
+            link: "/agent-skills/generators-getting-started",
+          },
+          {
+            text: "Generator Backend",
+            link: "/agent-skills/generators-backend",
+          },
+          {
+            text: "Generator Frontend",
+            link: "/agent-skills/generators-frontend",
+          },
+          {
+            text: "LaraJS Core",
+            link: "/agent-skills/packages-larajs-core",
+          },
+          {
+            text: "LaraJS Query",
+            link: "/agent-skills/packages-larajs-query",
+          },
+          {
+            text: "LaraJS i18n",
+            link: "/agent-skills/packages-larajs-i18n",
+          },
+          {
+            text: "LaraJS Permission",
+            link: "/agent-skills/packages-larajs-permission",
+          },
+          {
+            text: "LaraJS Generator",
+            link: "/agent-skills/packages-larajs-generator",
+          },
+          {
+            text: "LaraJS CQRS",
+            link: "/agent-skills/packages-larajs-cqrs",
+          },
+        ],
+      },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/maingocthanhtan96/LaraJS" },
