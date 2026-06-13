@@ -15,7 +15,7 @@ head:
       content: https://docs.larajs.com/agent-skills/generators-getting-started.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/agent-skills/generators-getting-started.html
@@ -85,37 +85,37 @@ composer require knuckleswtf/scribe
 
 | **Database Type**       | **Display Name**   | **Search** | **Sort** | **Show** |
 | ----------------------- | ------------------ | :--------: | :------: | :------: |
-| `increments`            | Increments         |     No     |    Yes   |    Yes   |
-| `integer`               | INTEGER            |     Yes    |    Yes   |    Yes   |
-| `unsignedInteger`       | UNSIGNED INTEGER   |     Yes    |    Yes   |    Yes   |
-| `tinyInteger`           | TINYINT            |     Yes    |    Yes   |    Yes   |
-| `unsignedTinyInteger`   | UNSIGNED TINYINT   |     Yes    |    Yes   |    Yes   |
-| `smallInteger`          | SMALLINT           |     Yes    |    Yes   |    Yes   |
-| `unsignedSmallInteger`  | UNSIGNED SMALLINT  |     Yes    |    Yes   |    Yes   |
-| `mediumInteger`         | MEDIUMINT          |     Yes    |    Yes   |    Yes   |
-| `unsignedMediumInteger` | UNSIGNED MEDIUMINT |     Yes    |    Yes   |    Yes   |
-| `bigInteger`            | BIGINT             |     Yes    |    Yes   |    Yes   |
-| `unsignedBigInteger`    | UNSIGNED BIGINT    |     Yes    |    Yes   |    Yes   |
-| `float`                 | FLOAT              |     Yes    |    Yes   |    Yes   |
-| `double`                | DOUBLE             |     Yes    |    Yes   |    Yes   |
-| `decimal`               | DECIMAL            |     Yes    |    Yes   |    Yes   |
-| `boolean`               | BOOLEAN            |     Yes    |    Yes   |    Yes   |
-| `date`                  | DATE               |     Yes    |    Yes   |    Yes   |
-| `dateTime`              | DATETIME           |     Yes    |    Yes   |    Yes   |
-| `timestamp`             | TIMESTAMP          |     Yes    |    Yes   |    Yes   |
-| `time`                  | TIME               |     Yes    |    Yes   |    Yes   |
-| `year`                  | YEAR               |     Yes    |    Yes   |    Yes   |
-| `char`                  | CHAR               |     Yes    |    Yes   |    Yes   |
-| `string`                | VARCHAR            |     Yes    |    Yes   |    Yes   |
-| `tinyText`              | TINYTEXT           |     Yes    |    Yes   |    Yes   |
-| `mediumText`            | MEDIUMTEXT         |     Yes    |    Yes   |    Yes   |
-| `text`                  | TEXT               |     Yes    |    Yes   |    Yes   |
-| `longText`              | LONGTEXT           |     Yes    |    Yes   |    Yes   |
-| `enum`                  | ENUM               |     Yes    |    Yes   |    Yes   |
-| `json`                  | JSON               |     No     |    No    |    Yes   |
-| `jsonb`                 | JSONB              |     No     |    No    |    Yes   |
-| `hasOne`                | hasOne             |     Yes    |    Yes   |    Yes   |
-| `hasMany`               | hasMany            |     Yes    |    Yes   |    Yes   |
+| `increments`            | Increments         |     No     |   Yes    |   Yes    |
+| `integer`               | INTEGER            |    Yes     |   Yes    |   Yes    |
+| `unsignedInteger`       | UNSIGNED INTEGER   |    Yes     |   Yes    |   Yes    |
+| `tinyInteger`           | TINYINT            |    Yes     |   Yes    |   Yes    |
+| `unsignedTinyInteger`   | UNSIGNED TINYINT   |    Yes     |   Yes    |   Yes    |
+| `smallInteger`          | SMALLINT           |    Yes     |   Yes    |   Yes    |
+| `unsignedSmallInteger`  | UNSIGNED SMALLINT  |    Yes     |   Yes    |   Yes    |
+| `mediumInteger`         | MEDIUMINT          |    Yes     |   Yes    |   Yes    |
+| `unsignedMediumInteger` | UNSIGNED MEDIUMINT |    Yes     |   Yes    |   Yes    |
+| `bigInteger`            | BIGINT             |    Yes     |   Yes    |   Yes    |
+| `unsignedBigInteger`    | UNSIGNED BIGINT    |    Yes     |   Yes    |   Yes    |
+| `float`                 | FLOAT              |    Yes     |   Yes    |   Yes    |
+| `double`                | DOUBLE             |    Yes     |   Yes    |   Yes    |
+| `decimal`               | DECIMAL            |    Yes     |   Yes    |   Yes    |
+| `boolean`               | BOOLEAN            |    Yes     |   Yes    |   Yes    |
+| `date`                  | DATE               |    Yes     |   Yes    |   Yes    |
+| `dateTime`              | DATETIME           |    Yes     |   Yes    |   Yes    |
+| `timestamp`             | TIMESTAMP          |    Yes     |   Yes    |   Yes    |
+| `time`                  | TIME               |    Yes     |   Yes    |   Yes    |
+| `year`                  | YEAR               |    Yes     |   Yes    |   Yes    |
+| `char`                  | CHAR               |    Yes     |   Yes    |   Yes    |
+| `string`                | VARCHAR            |    Yes     |   Yes    |   Yes    |
+| `tinyText`              | TINYTEXT           |    Yes     |   Yes    |   Yes    |
+| `mediumText`            | MEDIUMTEXT         |    Yes     |   Yes    |   Yes    |
+| `text`                  | TEXT               |    Yes     |   Yes    |   Yes    |
+| `longText`              | LONGTEXT           |    Yes     |   Yes    |   Yes    |
+| `enum`                  | ENUM               |    Yes     |   Yes    |   Yes    |
+| `json`                  | JSON               |     No     |    No    |   Yes    |
+| `jsonb`                 | JSONB              |     No     |    No    |   Yes    |
+| `hasOne`                | hasOne             |    Yes     |   Yes    |   Yes    |
+| `hasMany`               | hasMany            |    Yes     |   Yes    |   Yes    |
 
 ## Relationships
 

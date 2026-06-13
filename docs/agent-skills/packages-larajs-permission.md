@@ -15,7 +15,7 @@ head:
       content: https://docs.larajs.com/agent-skills/packages-larajs-permission.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/agent-skills/packages-larajs-permission.html
@@ -147,9 +147,7 @@ const administrator: RouterMapping = {
       path: "roles",
       name: "Role",
       component: () =>
-        import(
-          "@larajs/permission/src/views/role-permission/RolePermission.vue"
-        ),
+        import("@larajs/permission/src/views/role-permission/RolePermission.vue"),
       meta: {
         title: "role_permission",
         icon: "role",

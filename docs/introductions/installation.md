@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/introductions/installation.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: Step-by-step instructions for installing and configuring LaraJS, the Laravel & Vue.js low-code platform
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/introductions/installation.html

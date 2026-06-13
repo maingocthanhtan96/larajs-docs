@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/generators/backend.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Learn how LaraJS generates structured API code with controllers, services, repositories, resources, and tests"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/generators/backend.html

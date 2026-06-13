@@ -36,7 +36,7 @@ head:
       content: Save 40-70% development time with LaraJS - the ultimate Laravel & Vue.js low-code platform
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/introductions/introduction.html

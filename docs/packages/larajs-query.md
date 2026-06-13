@@ -21,7 +21,7 @@ head:
       content: Build powerful and flexible Laravel Eloquent queries with LaraJS Query for dynamic filtering, sorting, and relationship handling
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:title
       content: LaraJS Query - Dynamic API Query Builder for Laravel
@@ -33,7 +33,7 @@ head:
       content: https://docs.larajs.com/packages/larajs-query.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article

@@ -19,7 +19,7 @@ head:
       content: https://docs.larajs.com/
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/
@@ -29,7 +29,7 @@ hero:
   text: "Modern Laravel & Vue.js Platform"
   tagline: LaraJS is a comprehensive optimization & management platform for Laravel and Vue.js development. We provide essential tools, generators, and features for building robust web applications from day one.
   image:
-    src: /larajs.png
+    src: /larajs.webp
     alt: LaraJS Platform for Laravel and Vue.js Development
   actions:
     - theme: brand

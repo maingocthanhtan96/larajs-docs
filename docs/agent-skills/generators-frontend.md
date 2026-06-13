@@ -15,7 +15,7 @@ head:
       content: https://docs.larajs.com/agent-skills/generators-frontend.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/agent-skills/generators-frontend.html
@@ -83,7 +83,7 @@ export function useCategoryApis() {
   const updateCategory = (
     id: number | string,
     data: Partial<Category>,
-    props?: AxiosRequestConfig
+    props?: AxiosRequestConfig,
   ) => categoryResource.update(id, data, props);
   const deleteCategory = (id: number | string, props?: AxiosRequestConfig) =>
     categoryResource.delete(id, props);

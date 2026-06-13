@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/advanced-usage/larajs-form.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Create dynamic, validated forms quickly with LaraJS Form's intuitive API and pre-built components"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/advanced-usage/larajs-form.html

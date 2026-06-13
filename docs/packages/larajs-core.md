@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/packages/larajs-core.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Discover LaraJS Core package with essential middleware, API helpers, user signature tracking, and utility functions"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/packages/larajs-core.html

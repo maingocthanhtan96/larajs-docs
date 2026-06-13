@@ -15,7 +15,7 @@ head:
       content: https://docs.larajs.com/agent-skills/packages-larajs-core.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/agent-skills/packages-larajs-core.html

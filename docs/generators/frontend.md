@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/generators/frontend.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Learn how LaraJS generates structured Vue.js frontend code with form components, data tables, API integration, and routing for your CMS"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/generators/frontend.html
@@ -98,7 +98,7 @@ export function useCategoryApis() {
   const updateCategory = (
     id: number | string,
     data: Partial<Category>,
-    props?: AxiosRequestConfig
+    props?: AxiosRequestConfig,
   ) => categoryResource.update(id, data, props);
   const deleteCategory = (id: number | string, props?: AxiosRequestConfig) =>
     categoryResource.delete(id, props);

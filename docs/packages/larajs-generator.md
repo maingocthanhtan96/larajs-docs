@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/packages/larajs-generator.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: Speed up your development with LaraJS Generator - an advanced code generation tool that automates Laravel & Vue.js code creation
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/packages/larajs-generator.html

@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/advanced-usage/larajs-table.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Build powerful interactive data tables with sorting, filtering, pagination and advanced display options"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/advanced-usage/larajs-table.html

@@ -21,7 +21,7 @@ head:
       content: https://docs.larajs.com/packages/larajs-cqrs.html
   - - meta
     - property: og:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - meta
     - property: og:type
       content: article
@@ -36,7 +36,7 @@ head:
       content: "Implement CQRS architecture in Laravel applications with LaraJS CQRS package to separate command and query operations"
   - - meta
     - name: twitter:image
-      content: https://docs.larajs.com/larajs.png
+      content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
       href: https://docs.larajs.com/packages/larajs-cqrs.html
