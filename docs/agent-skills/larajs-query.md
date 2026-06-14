@@ -1,5 +1,29 @@
 ---
-name: packages-larajs-query
+outline: deep
+title: "Agent Skill: LaraJS Query Package - LaraJS Docs"
+description: "AI skill context for LaraJS Query: dynamic Eloquent filtering, sorting, searching, relationships, pagination, and the allow query pattern."
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "Agent Skill: LaraJS Query Package - LaraJS Docs"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/agent-skills/larajs-query.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.webp
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/agent-skills/larajs-query.html
+---
+
+````markdown
+---
+name: larajs-query
 description: Use when the user asks about LaraJS Query package, dynamic Eloquent query building, API filtering (equals, lessThan, greaterThan, contains, startsWith, endsWith, any, between, relation, not, has, or, and), sorting (ascending, descending, multi-attribute, relationship sorting with BelongsToThrough), searching (whereLike partial match), including relationships with aggregates (count, exists, sum, min, max, avg), field selection, date filtering, pagination (default, simple, cursor), allow query configuration (QueryParserAllowDTO), or the repository pattern (ReadRepository, WriteRepository, BaseLaraJSRepository).
 ---
 
@@ -226,3 +250,4 @@ class WriteRepository implements WriteRepositoryInterface
     public function delete(int $id): bool;
 }
 ```
+````

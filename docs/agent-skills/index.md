@@ -61,17 +61,17 @@ Agent skills are modular knowledge packages stored under `.claude/skills/` in yo
     │   └── SKILL.md
     ├── generators-frontend/
     │   └── SKILL.md
-    ├── packages-larajs-core/
+    ├── larajs-core/
     │   └── SKILL.md
-    ├── packages-larajs-query/
+    ├── larajs-query/
     │   └── SKILL.md
-    ├── packages-larajs-i18n/
+    ├── larajs-i18n/
     │   └── SKILL.md
-    ├── packages-larajs-permission/
+    ├── larajs-permission/
     │   └── SKILL.md
-    ├── packages-larajs-generator/
+    ├── larajs-generator/
     │   └── SKILL.md
-    └── packages-larajs-cqrs/
+    └── larajs-cqrs/
         └── SKILL.md
 ```
 
@@ -105,7 +105,7 @@ Covers the generated Vue.js CMS structure: file layout (API integration, router 
 
 ### Package Skills
 
-#### `packages-larajs-core`
+#### `larajs-core`
 
 Covers the `larajs/core` package: installation and setup (`larajs:setup`), `BaseLaraJSController` response methods (`responseData`, `responseMessage`, `responseResource`), `LangMiddleware` for language switching, `LogRequestResponse` middleware, `UserSignature` trait for tracking `created_by`/`updated_by`, the `Action` trait, artisan commands (`larajs:make:action`, `larajs:make:controller`, `larajs:make:repository`), and helper functions.
 
@@ -113,7 +113,7 @@ Covers the `larajs/core` package: installation and setup (`larajs:setup`), `Base
 
 ---
 
-#### `packages-larajs-query`
+#### `larajs-query`
 
 Covers the `larajs/query` package: dynamic Eloquent query building with `LaraJSQuery` trait, all filter operations (equals, lessThan, greaterThan, contains, startsWith, endsWith, any, between, relation, not, has, or, and), sorting (including relationship and count sorting via BelongsToThrough), searching with `whereLike`, including relationships with aggregates (count, exists, sum, min, max, avg), field selection, date filtering, all pagination modes (default, simple, cursor), the `QueryParserAllowDTO` allow-list pattern, and the repository structure (ReadRepository, WriteRepository, BaseLaraJSRepository).
 
@@ -121,7 +121,7 @@ Covers the `larajs/query` package: dynamic Eloquent query building with `LaraJSQ
 
 ---
 
-#### `packages-larajs-i18n`
+#### `larajs-i18n`
 
 Covers the `larajs/i18n` package: installation as a dev dependency, running `php artisan larajs:i18n` to convert PHP language files to JSON, publishing the config, and integrating the generated JSON file with Vue I18n (`createI18n`).
 
@@ -129,7 +129,7 @@ Covers the `larajs/i18n` package: installation as a dev dependency, running `php
 
 ---
 
-#### `packages-larajs-permission`
+#### `larajs-permission`
 
 Covers the `larajs/permission` package: installation, adding `HasRoles` trait to the User model, defining a Super-Admin with `Gate::before` in `AuthServiceProvider`, setting up role and permission seeders with `RoleEnum` and `PermissionEnum`, syncing roles/permissions (`syncRoles`, `givePermissionTo`), and integrating the Role Permission UI into the Vue.js CMS.
 
@@ -137,7 +137,7 @@ Covers the `larajs/permission` package: installation, adding `HasRoles` trait to
 
 ---
 
-#### `packages-larajs-generator`
+#### `larajs-generator`
 
 Covers the `larajs/generator` package: installation, configuring the Node.js path via `GENERATOR_NODE_PATH` environment variable, publishing config/migration/stubs, and the `generators` database table schema.
 
@@ -145,7 +145,7 @@ Covers the `larajs/generator` package: installation, configuring the Node.js pat
 
 ---
 
-#### `packages-larajs-cqrs`
+#### `larajs-cqrs`
 
 Covers the `larajs/cqrs` package: installation, publishing config, the CQRS folder structure (Commands, Queries, Resources), creating commands with `#[Handler]` attribute, command handlers, query handlers, `CommandBusInterface` and `QueryBusInterface`, registering middleware with `#[Middleware]` and `#[ResetMiddleware]` attributes, and the `cqrs.php` bus configuration.
 

@@ -12,18 +12,18 @@ head:
       content: "Agent Skill: LaraJS i18n Package - LaraJS Docs"
   - - meta
     - property: og:url
-      content: https://docs.larajs.com/agent-skills/packages-larajs-i18n.html
+      content: https://docs.larajs.com/agent-skills/larajs-i18n.html
   - - meta
     - property: og:image
       content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
-      href: https://docs.larajs.com/agent-skills/packages-larajs-i18n.html
+      href: https://docs.larajs.com/agent-skills/larajs-i18n.html
 ---
 
 ````markdown
 ---
-name: packages-larajs-i18n
+name: larajs-i18n
 description: Use when the user asks about the LaraJS i18n package, converting Laravel PHP language files to JSON for Vue.js frontend internationalization, running php artisan larajs:i18n, publishing the larajs-i18n config, or integrating the generated JSON with Vue I18n (createI18n).
 ---
 

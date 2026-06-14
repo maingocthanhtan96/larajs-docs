@@ -12,18 +12,18 @@ head:
       content: "Agent Skill: LaraJS Generator Package - LaraJS Docs"
   - - meta
     - property: og:url
-      content: https://docs.larajs.com/agent-skills/packages-larajs-generator.html
+      content: https://docs.larajs.com/agent-skills/larajs-generator.html
   - - meta
     - property: og:image
       content: https://docs.larajs.com/larajs.webp
   - - link
     - rel: canonical
-      href: https://docs.larajs.com/agent-skills/packages-larajs-generator.html
+      href: https://docs.larajs.com/agent-skills/larajs-generator.html
 ---
 
 ````markdown
 ---
-name: packages-larajs-generator
+name: larajs-generator
 description: Use when the user asks about the LaraJS Generator package installation, configuring the node path (GENERATOR_NODE_PATH env variable), publishing generator config (larajs-generator-config), publishing generator migrations (larajs-generator-migration), publishing generator stubs (larajs-generator-stubs), or the generators database migration schema (generators table with field, model, table, files columns).
 ---
 

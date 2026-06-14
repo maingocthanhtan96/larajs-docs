@@ -1,8 +1,7 @@
 ---
-name: packages-larajs-generator
+name: larajs-generator
 description: Use when the user asks about the LaraJS Generator package installation, configuring the node path (GENERATOR_NODE_PATH env variable), publishing generator config (larajs-generator-config), publishing generator migrations (larajs-generator-migration), publishing generator stubs (larajs-generator-stubs), or the generators database migration schema (generators table with field, model, table, files columns).
 ---
-
 # LaraJS Generator
 
 ## Introduction

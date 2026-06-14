@@ -1,8 +1,7 @@
 ---
-name: packages-larajs-core
+name: larajs-core
 description: Use when the user asks about the LaraJS Core package, including installation (composer require larajs/core), setup (php artisan larajs:setup), BaseLaraJSController API response methods (responseData, responseMessage, responseResource), middleware (LangMiddleware for language switching, LogRequestResponse for request/response logging), Traits (UserSignature for tracking created_by/updated_by, Action trait for action classes), artisan commands (larajs:make:action, larajs:make:controller, larajs:make:repository), or helper functions (storage_exist_file, storage_delete_file, save_file_base64, is_file_base64, to_sql_binding, mime2ext).
 ---
-
 # LaraJS Core
 
 ## Introduction

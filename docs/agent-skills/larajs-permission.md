@@ -1,5 +1,29 @@
 ---
-name: packages-larajs-permission
+outline: deep
+title: "Agent Skill: LaraJS Permission Package - LaraJS Docs"
+description: "AI skill context for the LaraJS Permission package: RBAC setup, role/permission seeders, HasRoles trait, and frontend role UI integration."
+author: "LaraJS Team"
+head:
+  - - meta
+    - name: robots
+      content: index, follow
+  - - meta
+    - property: og:title
+      content: "Agent Skill: LaraJS Permission Package - LaraJS Docs"
+  - - meta
+    - property: og:url
+      content: https://docs.larajs.com/agent-skills/larajs-permission.html
+  - - meta
+    - property: og:image
+      content: https://docs.larajs.com/larajs.webp
+  - - link
+    - rel: canonical
+      href: https://docs.larajs.com/agent-skills/larajs-permission.html
+---
+
+````markdown
+---
+name: larajs-permission
 description: Use when the user asks about the LaraJS Permission package, role-based access control (RBAC), installing larajs/permission, adding HasRoles trait to User model, defining Super-Admin with Gate::before in AuthServiceProvider, setting up role/permission seeders (SetupUserRolePermissionSeeder), RoleEnum, PermissionEnum, syncing roles and permissions (syncRoles, givePermissionTo), or integrating the Role Permission UI in the Vue.js CMS frontend.
 ---
 
@@ -123,9 +147,7 @@ const administrator: RouterMapping = {
       path: "roles",
       name: "Role",
       component: () =>
-        import(
-          "@larajs/permission/src/views/role-permission/RolePermission.vue"
-        ),
+        import("@larajs/permission/src/views/role-permission/RolePermission.vue"),
       meta: {
         title: "role_permission",
         icon: "role",
@@ -136,3 +158,4 @@ const administrator: RouterMapping = {
   ],
 };
 ```
+````

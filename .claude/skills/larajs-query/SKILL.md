@@ -1,32 +1,7 @@
 ---
-outline: deep
-title: "Agent Skill: LaraJS Query Package - LaraJS Docs"
-description: "AI skill context for LaraJS Query: dynamic Eloquent filtering, sorting, searching, relationships, pagination, and the allow query pattern."
-author: "LaraJS Team"
-head:
-  - - meta
-    - name: robots
-      content: index, follow
-  - - meta
-    - property: og:title
-      content: "Agent Skill: LaraJS Query Package - LaraJS Docs"
-  - - meta
-    - property: og:url
-      content: https://docs.larajs.com/agent-skills/packages-larajs-query.html
-  - - meta
-    - property: og:image
-      content: https://docs.larajs.com/larajs.webp
-  - - link
-    - rel: canonical
-      href: https://docs.larajs.com/agent-skills/packages-larajs-query.html
----
-
-````markdown
----
-name: packages-larajs-query
+name: larajs-query
 description: Use when the user asks about LaraJS Query package, dynamic Eloquent query building, API filtering (equals, lessThan, greaterThan, contains, startsWith, endsWith, any, between, relation, not, has, or, and), sorting (ascending, descending, multi-attribute, relationship sorting with BelongsToThrough), searching (whereLike partial match), including relationships with aggregates (count, exists, sum, min, max, avg), field selection, date filtering, pagination (default, simple, cursor), allow query configuration (QueryParserAllowDTO), or the repository pattern (ReadRepository, WriteRepository, BaseLaraJSRepository).
 ---
-
 # LaraJS Query
 
 ## Introduction
@@ -61,8 +36,8 @@ Easily filter resources by attributes using the `filter` query string parameter:
 ?filter=expression
 ```
 
-| **Operation**                          | **Function**             | **Example**                                                               |
-| -------------------------------------- | ------------------------ | ------------------------------------------------------------------------- |
+| **Operation**                    | **Function**         | **Example**                                                           |
+| -------------------------------------- | -------------------------- | --------------------------------------------------------------------------- |
 | Equality                               | `equals`                 | `?filter=equals(name,'Smith')`                                            |
 | Equality relationship                  | `equalsRelation`         | `?filter=equalsRelation(articles, name,'Smith')`                          |
 | Less than                              | `lessThan`               | `?filter=lessThan(age,'25')`                                              |
@@ -91,8 +66,8 @@ Easily filter resources by attributes using the `filter` query string parameter:
 
 ## Sorting
 
-| **Operation**       | **Example**                       |
-| ------------------- | --------------------------------- |
+| **Operation** | **Example**                   |
+| ------------------- | ----------------------------------- |
 | Ascending           | `?sort=id`                        |
 | Descending          | `?sort=-id`                       |
 | Multiple attributes | `?sort=id,created_at,-updated_at` |
@@ -113,34 +88,34 @@ Example: Sort `Comment` records based on the `name` attribute of the related `Co
 
 Perform searches using the `search` query string parameter. Applies a `whereLike(attribute, '%value%')` query:
 
-| **Operation**       | **Example**                                         |
-| ------------------- | --------------------------------------------------- |
+| **Operation** | **Example**                                     |
+| ------------------- | ----------------------------------------------------- |
 | An Attribute        | `?search[column]=name&search[value]=larajs`         |
 | Multiple attributes | `?search[column]=name,content&search[value]=larajs` |
 | Relationships       | `?search[column]=roles.name&search[value]=admin`    |
 
 ## Including Relationships
 
-| **Operation**                                  | **Example**                                                                                          |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| An Attribute                                   | `?include[]=roles`                                                                                   |
-| Multiple Attributes                            | `?include[]=roles&include[]=roles.permissions`                                                       |
-| Nested Relationship                            | `?include[]=roles:id,name&include[]=roles.permissions&include[]=roles.permissions.users:id,username` |
-| Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists`                      |
-| Filter relationship                            | `?include[]=comments\|and(equals(user_id, '1'),equals(status, '1'))`                                 |
+| **Operation**                         | **Example**                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| An Attribute                                | `?include[]=roles`                                                                                   |
+| Multiple Attributes                         | `?include[]=roles&include[]=roles.permissions`                                                       |
+| Nested Relationship                         | `?include[]=roles:id,name&include[]=roles.permissions&include[]=roles.permissions.users:id,username` |
+| Aggregates `count\|exists\|sum\|min\|max\|avg` | `?include[]=roles\|count&include[]=roles\|exists&include[]=permissions\|exists`                         |
+| Filter relationship                         | `?include[]=comments\|and(equals(user_id, '1'),equals(status, '1'))`                                  |
 
 ## Selecting Fields
 
-| **Operation** | **Example**                   |
-| ------------- | ----------------------------- |
-| Attributes    | `?select=id,name,description` |
+| **Operation** | **Example**               |
+| ------------------- | ------------------------------- |
+| Attributes          | `?select=id,name,description` |
 
 ## Date Filtering
 
 The `date` parameter automatically calculates the `startOfDay` and `endOfDay` values. Both methods apply a `whereBetween(attribute, [startDate, endDate])` query.
 
-| **Operation**        | **Example**                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------------- |
+| **Operation**  | **Example**                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------- |
 | Attribute (option 1) | `?date[column]=updated_at&date[value][0]=2024-10-01&date[value][1]=2024-10-15`              |
 | Attribute (option 2) | `?date[column]=updated_at&date[value][start]=2024-10-01&date[value][end]=2024-10-15`        |
 | Attribute (option 3) | `?filter=between(updated_at,'2025-01-01 00:00:00','2025-01-15 23:59:59')`                   |
@@ -148,11 +123,11 @@ The `date` parameter automatically calculates the `startOfDay` and `endOfDay` va
 
 ## Pagination
 
-| **Operation** | **Example**                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------- |
-| `default`     | `?pagination[limit]=25&pagination[page]=1`                                                    |
-| `simple`      | `?pagination[type]=simple&pagination[limit]=25&pagination[page]=1`                            |
-| `cursor`      | `?pagination[type]=cursor&pagination[cursor]=eyJpZCI6MTUsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0` |
+| **Operation** | **Example**                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `default`         | `?pagination[limit]=25&pagination[page]=1`                                                    |
+| `simple`          | `?pagination[type]=simple&pagination[limit]=25&pagination[page]=1`                            |
+| `cursor`          | `?pagination[type]=cursor&pagination[cursor]=eyJpZCI6MTUsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0` |
 
 ## Allow Query (Recommended)
 
@@ -250,4 +225,3 @@ class WriteRepository implements WriteRepositoryInterface
     public function delete(int $id): bool;
 }
 ```
-````

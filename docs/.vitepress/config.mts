@@ -202,27 +202,27 @@ export default defineConfig({
           },
           {
             text: "LaraJS Core",
-            link: "/agent-skills/packages-larajs-core",
+            link: "/agent-skills/larajs-core",
           },
           {
             text: "LaraJS Query",
-            link: "/agent-skills/packages-larajs-query",
+            link: "/agent-skills/larajs-query",
           },
           {
             text: "LaraJS i18n",
-            link: "/agent-skills/packages-larajs-i18n",
+            link: "/agent-skills/larajs-i18n",
           },
           {
             text: "LaraJS Permission",
-            link: "/agent-skills/packages-larajs-permission",
+            link: "/agent-skills/larajs-permission",
           },
           {
             text: "LaraJS Generator",
-            link: "/agent-skills/packages-larajs-generator",
+            link: "/agent-skills/larajs-generator",
           },
           {
             text: "LaraJS CQRS",
-            link: "/agent-skills/packages-larajs-cqrs",
+            link: "/agent-skills/larajs-cqrs",
           },
         ],
       },

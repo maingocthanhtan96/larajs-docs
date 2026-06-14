@@ -1,8 +1,7 @@
 ---
-name: packages-larajs-i18n
+name: larajs-i18n
 description: Use when the user asks about the LaraJS i18n package, converting Laravel PHP language files to JSON for Vue.js frontend internationalization, running php artisan larajs:i18n, publishing the larajs-i18n config, or integrating the generated JSON with Vue I18n (createI18n).
 ---
-
 # LaraJS i18n
 
 ## Introduction
@@ -57,6 +56,7 @@ export default i18n;
 The `larajs:i18n` artisan command scans your Laravel language files (PHP arrays) and converts them into a structured JSON file that Vue I18n can consume. This allows you to maintain translations in Laravel's PHP format while making them available to your Vue.js frontend.
 
 The generated file is typically placed at:
+
 ```
 packages/common/src/lang/vue-i18n-locales.generated.json
 ```

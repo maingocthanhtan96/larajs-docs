@@ -1,32 +1,7 @@
 ---
-outline: deep
-title: "Agent Skill: LaraJS CQRS Package - LaraJS Docs"
-description: "AI skill context for the LaraJS CQRS package: command buses, query buses, command/query handlers, middleware attributes, and bus configuration."
-author: "LaraJS Team"
-head:
-  - - meta
-    - name: robots
-      content: index, follow
-  - - meta
-    - property: og:title
-      content: "Agent Skill: LaraJS CQRS Package - LaraJS Docs"
-  - - meta
-    - property: og:url
-      content: https://docs.larajs.com/agent-skills/packages-larajs-cqrs.html
-  - - meta
-    - property: og:image
-      content: https://docs.larajs.com/larajs.webp
-  - - link
-    - rel: canonical
-      href: https://docs.larajs.com/agent-skills/packages-larajs-cqrs.html
----
-
-````markdown
----
-name: packages-larajs-cqrs
+name: larajs-cqrs
 description: Use when the user asks about the LaraJS CQRS package, Command Query Responsibility Segregation pattern in Laravel, installing larajs/cqrs, publishing the cqrs config, creating command handlers (Command, CommandHandler, CommandBusInterface), creating query handlers (Query, QueryHandler, QueryBusInterface), CQRS folder structure (Commands/, Queries/, Resources/), the #[Handler] attribute for handler resolution, #[Middleware] and #[ResetMiddleware] attributes for registering middleware on handlers, or configuring cqrs.php buses (command bus, query bus, SuffixHandlerResolver).
 ---
-
 # LaraJS CQRS
 
 ## Introduction
@@ -300,4 +275,3 @@ class RegisterUserCommandHandler
     ],
 ],
 ```
-````
