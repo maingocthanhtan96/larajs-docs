@@ -50,6 +50,14 @@ LaraJS Query is a powerful package that simplifies querying Eloquent models by d
 
 ## Quick Start
 
+**Install the package**
+
+[Github](https://github.com/maingocthanhtan96/larajs-query)
+
+```bash
+composer require larajs/query
+```
+
 Here's how to integrate the package with your Laravel controllers:
 
 ```php
